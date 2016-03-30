@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>Spam Filtering System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css">
+    <style type="text/css">
+    body {
+      padding-top:60px;
+      padding-bottom: 60px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Spam Filtering System</a>
+        </div>
+
+    </div>
+  </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <textarea class="form-control" rows="3" placeholder="Write text to see sentiment analysis in action. Write minimum 10 charaters and press button."></textarea>
+            </div>
+            <div class="row">
+                <br><br>
+                <button class="btn-lg btn-warning">Classify</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <p id="result"></p>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="static/js/jquery.js"></script>
+<script type="text/javascript">
+
+    $("button").click(function(){
+        var messageTxt = $('textarea').val();
+        $('#result').removeClass("alert alert-warning");
+        $('#result').removeClass("alert alert-danger");
+        $('#result').removeClass("alert alert-success");
+        if (messageTxt.length > 10){
+
+            $.post('/api/classify',{message: messageTxt},function(result){
+                if(result.category == 'spam'){
+                    console.log('text is a spam');
+                    $('#result').addClass("alert alert-danger") .text(messageTxt);
+                }
+                else{
+                    console.log('text is a ham');
+                    $('#result').addClass("alert alert-success").text(messageTxt);
+                }
+            });
+        }
+});
+</script>
+</body>
+</html>
