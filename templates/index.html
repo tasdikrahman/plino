@@ -1,70 +1,101 @@
+<!-- @Author: Tasdik Rahman -->
+<!-- @Date:   2016-04-05 17:00:38 -->
+<!-- @Last Modified by:   Tasdik Rahman -->
+<!-- @Last Modified time: 2016-04-05 17:16:25 -->
+<!-- @GPLv3 License -->
+<!-- @http://tasdikrahman.me -->
+<!-- @https://github.com/prodicus/plino -->
+<!DOCTYPE html>
 <html>
-<head>
-    <title>Spam Filtering System</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css">
-    <style type="text/css">
-    body {
-      padding-top:60px;
-      padding-bottom: 60px;
-    }
-  </style>
-</head>
-<body>
-
-<div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Spam Filtering System</a>
-        </div>
-
-    </div>
-  </div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="row">
-                <textarea class="form-control" rows="3" placeholder="Paste you mail here to see the classifier in action. Write minimum 10 charaters and press button."></textarea>
-            </div>
-            <div class="row">
-                <br><br>
-                <button class="btn-lg btn-warning">Classify</button>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <p id="result"></p>
-        </div>
-    </div>
-</div>
-
-<script type="text/javascript" src="static/js/jquery.js"></script>
-<script type="text/javascript">
-
-    $("button").click(function(){
-        var messageTxt = $('textarea').val();
-        $('#result').removeClass("alert alert-warning");
-        $('#result').removeClass("alert alert-danger");
-        $('#result').removeClass("alert alert-success");
-        if (messageTxt.length > 10){
-
-            $.post('/api/classify',{message: messageTxt},function(result){
-                if(result.category == 'spam'){
-                    console.log('text is a spam');
-                    $('#result').addClass("alert alert-danger") .text(messageTxt);
-                }
-                else{
-                    console.log('text is a ham');
-                    $('#result').addClass("alert alert-success").text(messageTxt);
-                }
-            });
+    <head>
+        <title>Spam Filtering System</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css">
+        <style type="text/css">
+        body {
+          padding-top:60px;
+          padding-bottom: 60px;
         }
-});
-</script>
-</body>
+      </style>
+    </head>
+    <!-- HEAD ends -->
+    <!-- BODY starts  -->
+    <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Spam Filtering System</a>
+            </div>
+
+        </div>
+      </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <textarea class="form-control" rows="3" placeholder="Paste you mail here to see the classifier in action. Write minimum 10 charaters and press button."></textarea>
+                </div>
+                <div class="row">
+                    <br><br>
+                    <button class="btn-lg btn-warning">Classify</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p id="result"></p>
+                <p id="unicodeError"></p>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="static/js/jquery.js"></script>
+
+    <!-- Displays the text entered in either ham, spam or unicode error category -->
+    <script type="text/javascript">
+
+        $("button").click(function(){
+            var messageTxt = $('textarea').val();
+            var unicodeErrorTxt = "Looks like we had an Encoding issue! Please try something different";
+            $('#unicodeError').removeClass("alert alert-warning");
+            $('#result').removeClass("alert alert-danger");
+            $('#result').removeClass("alert alert-success");
+            if (messageTxt.length > 10){
+
+                $.post('/api/classify',{message: messageTxt},function(result){
+                    if(result.category == 'spam'){
+                        console.log('text is a spam');
+                        $('#result').addClass("alert alert-danger") .text(messageTxt);
+                    }
+                    else if (result.category == 'ham'){
+                        console.log('text is a ham');
+                        $('#result').addClass("alert alert-success").text(messageTxt);
+                    }
+                    else if (result.category == 'UnicodeEncodeError'){
+                        console.log('text is a ham');
+                        $('#unicodeError').addClass("alert alert-warning").text(unicodeErrorTxt);
+                    }
+                });
+            }
+    });
+    </script>
+    <!-- Google analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-73854219-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    <!-- Google analytics -->
+    </body>
+    <!-- BODY ends  -->
 </html>

@@ -2,7 +2,7 @@
 # @Author: Tasdik Rahman
 # @Date:   2016-03-30
 # @Last Modified by:   Tasdik Rahman
-# @Last Modified time: 2016-04-05 16:17:25
+# @Last Modified time: 2016-04-05 16:48:15
 # @MIT License
 # @http://tasdikrahman.me
 # @https://github.com/prodicus
@@ -44,23 +44,25 @@ def index():
 
 @app.route('/api/classify',methods=['POST'])
 def classify():
+    # get the input text email
     email_text = request.form['message']
 
+    try:
+        # === Preprocessing ==== #
+        email_text = bs4.UnicodeDammit.detwingle(
+            email_text).decode('utf-8')
+        email_text = email_text.encode('ascii', 'ignore')
+        # ====================== #
 
-    # === Preprocessing ==== #
-    email_text = bs4.UnicodeDammit.detwingle(
-        email_text).decode('utf-8')
-    email_text = email_text.encode('ascii', 'ignore')
-    # ====================== #
-
-    hamorspam = classifier_object.classify(
-                    trainer_object.extract_features(email_text)
-                )
-    response = {'category': hamorspam, 'status': 'ok'}
-
-    # logging the message and the response for it, spam or ham
-
-    return jsonify(response)
-
+        hamorspam = classifier_object.classify(
+                        trainer_object.extract_features(email_text)
+                    )
+        response = {'category': hamorspam, 'status': 'ok'}
+        return jsonify(response)
+    except UnicodeEncodeError:
+        hamorspam = 'UnicodeEncodeError'
+        response = {'category': hamorspam, 'status': 'error'}
+        return jsonify(response)
+        
 if __name__ == "__main__":
     app.run(debug=True)
