@@ -2,18 +2,11 @@
 # @Author: Tasdik Rahman
 # @Date:   2016-03-12
 # @Last Modified by:   Tasdik Rahman
-# @Last Modified time: 2016-04-05 16:32:19
+# @Last Modified time: 2016-04-05 22:49:45
 # @GPLv3 License
 # @http://tasdikrahman.me
-# @https://github.com/prodicus/spamfilter
+# @Source Git Repository:: https://github.com/prodicus/spamfilter
 
-
-"""
-TO-DO:
-======
-
-train the classifier object and store it in a pickle object for fast reuse
-"""
 
 import os
 import string
@@ -27,8 +20,12 @@ from termcolor import colored
 
 # specify the folder `/path_to_plino/nltk_data/` as heroku will not be having
 # the nltk installed in it!
+APP = os.path.abspath(__file__)
+FILE_DIR, APP_NAME = os.path.split(APP)
+NLTK_DATA_PATH = os.path.join(FILE_DIR, 'nltk_data')
+
 import nltk
-nltk.data.path.append('./nltk_data/')
+nltk.data.path.append(NLTK_DATA_PATH)
 from nltk.corpus import stopwords
 from nltk import stem  # uses PoterStemmer()
 
@@ -36,10 +33,11 @@ from classifier import NaiveBayesClassifier
 
 logging.basicConfig(
     filename='logfiles/logfile.txt',
-    level = logging.DEBUG,
-    filemode = 'w',
-    format = '%(asctime)s - %(levelname)s - %(message)s'
+    level=logging.DEBUG,
+    filemode='w',
+    format='%(asctime)s - %(levelname)s - %(message)s'
 )
+
 
 class Trainer(object):
 
@@ -85,11 +83,11 @@ class Trainer(object):
         if verbose:
             print colored("Training {0} emails in {1} class".format(
                 limit, label
-                ),'green'
+            ), 'green'
             )
             logging.debug("Training {0} emails in {1} class".format(
                 limit, label
-                )
+            )
             )
 
         # changing the path to that particular directory
@@ -97,7 +95,7 @@ class Trainer(object):
 
         for email in os.listdir(path)[:self.limit]:
             if verbose and verbose > 1:
-                print colored("Processing file: {0}".format(email),'green')
+                print colored("Processing file: {0}".format(email), 'green')
                 logging.info("Processing file: {0}".format(email))
             email_file = open(email, 'r')  # explicit better than implicit
             email_text = email_file.read()
@@ -113,10 +111,10 @@ class Trainer(object):
                 email_text = bs4.UnicodeDammit.detwingle(
                     email_text).decode('utf-8')
             except:
-                print colored("Skipping file {0} due to bad encoding".format(email),'red')
+                print colored("Skipping file {0} due to bad encoding".format(email), 'red')
                 logging.error("Skipping file {0} due to bad encoding".format(
-                        os.path.join(path, email)
-                    )
+                    os.path.join(path, email)
+                )
                 )
                 continue
 
@@ -220,7 +218,7 @@ class Trainer(object):
                 features.append(
                     porterStemmer.stem(token.translate(
                         None, string.punctuation
-                        )
+                    )
                     ).lower()
                 )
 

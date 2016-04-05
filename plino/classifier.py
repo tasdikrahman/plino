@@ -2,29 +2,11 @@
 # @Author: Tasdik Rahman
 # @Date:   2016-03-12
 # @Last Modified by:   Tasdik Rahman
-# @Last Modified time: 2016-04-05 15:27:25
+# @Last Modified time: 2016-04-05 22:49:40
 # @GPLv3 License
 # @http://tasdikrahman.me
-# @https://github.com/prodicus/spamfilter
+# @Source Git Repository:: https://github.com/prodicus/spamfilter
 
-"""
-Rolling my own Implementation of Naive Bayes algorithm.
-
-This particular implementation caters to the case when a category is not
-observed in the dataset, and the model automatically assigns a 0 probability
-to it!
-
-Read about smoothening techniques somewhere but let's not delve into that now.
-
-
-References
-==========
-[1] 
-  - http://stackoverflow.com/a/5029989/3834059
-  - http://stackoverflow.com/q/8419401/3834059
-  - http://stackoverflow.com/q/2600790/3834059
-
-"""
 
 from __future__ import division
 from collections import defaultdict

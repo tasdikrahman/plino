@@ -4,30 +4,30 @@ An intelligent spam filtering system built using a `custom Naive Bayes classifie
 
 **:arrow_forward: You can try it out here at [https://plino.heroku.com/](https://plino.heroku.com/)**
 
->This app is based on the work I did on [https://github.com/prodicus/spamfilter]
+>This app is based directly on the work I did on [https://github.com/prodicus/spamfilter](https://github.com/prodicus/spamfilter)
 
 
 ***
 
 ## Table of contents
 
-- [Screenshots](#screenshots)
+- [Demo](#demo)
 - [Technologies used](#technologies-used)
     - [Backend](#backend)
     - [Front end](#front-end)
-- [Development](#development)
+- [Contributing](#contributing)
     - [Installing it locally](#installing-it-locally)
     - [Running it](#running-it)
-    - [How accurate is it](#how-accurate-is-it)
 - [FAQ](#faq)
     - [What is the classifier based on](#what-is-the-classifier-based-on)
     - [What did you train the classifier on](#what-did-you-train-the-classifier-on)
+    - [How accurate is it](#how-accurate-is-it)
 - [Roadmap](#roadmap)
 - [Legal stuff](#legal-stuff)
 
 ***
 
-## Screenshots
+## Demo
 [:arrow_up: Back to top](https://github.com/prodicus/plino#plino)
 
 ### For Ham Mail
@@ -46,20 +46,18 @@ An intelligent spam filtering system built using a `custom Naive Bayes classifie
 ## Technologies used
 [:arrow_up: Back to top](https://github.com/prodicus/plino#plino)
 
-Built upon the giant shoulders of the following awesome (__in no particular order__)
+Built upon the giant shoulders of (__in no particular order__)
 
 #### Backend
 
-- [Flask](http://flask.pocoo.org/)
-- [nltk](http://nltk.org)
+- [Flask](http://flask.pocoo.org/) as `Django` would have been an overkill for this!
+- [nltk](http://nltk.org) for text pre-processing
 - [gunicorn](http://gunicorn.org/) as the production server
-- [beautifulsoup4](http://www.crummy.com/software/BeautifulSoup/)
-- [dill](https://pypi.python.org/pypi/dill)
-- [itsdangerous](https://pypi.python.org/pypi/itsdangerous)
-- [Jinja2](jinja.pocoo.org/)
-- [MarkupSafe](www.pocoo.org/projects/markupsafe/)
-- [tabulate](https://bitbucket.org/astanin/python-tabulate)
-- [Werkzeug](werkzeug.pocoo.org/)
+- [beautifulsoup4](http://www.crummy.com/software/BeautifulSoup/) for handling unicode issues
+- [Jinja2](jinja.pocoo.org/) as the templating engine
+- [dill](https://pypi.python.org/pypi/dill) for de-serializing complex python objects
+
+[and some more](https://github.com/prodicus/plino/blob/master/requirements.txt)
 
 #### Front end
 
@@ -68,14 +66,17 @@ Built upon the giant shoulders of the following awesome (__in no particular orde
 
 ***
 
-## Development
+## Contributing
 [:arrow_up: Back to top](https://github.com/prodicus/plino#plino)
 
 #### Installing it locally
 
-```sh
-$ git clone https://github.com/prodicus/plino && cd plino
-$ pip install -r requirements.txt
+```bash
+$ virtualenv venv              # Create virtual environment
+$ source venv/bin/activate     # Change default python to virtual one
+(venv)$ git clone https://github.com/prodicus/plino.git
+(venv)$ cd plino 
+(venv)$ pip install -r requirements.txt
 ```
 
 #### Running it
@@ -83,6 +84,8 @@ $ pip install -r requirements.txt
 ```sh
 $ make run
 ```
+
+**Refer [CONTRIBUTING.md](https://github.com/prodicus/plino/blob/master/CONTRIBUTING.md) for detailed reference**
 
 ***
 
@@ -95,7 +98,7 @@ This repo is build directly on the work I did on [prodicus/spamfilter](https://g
 
 #### What did you train the classifier on
 
-The pickled classifier was trained against a total of close to **33,000** emails picked from publicly available [enron dataset](https://www.cs.cmu.edu/~./enron/)
+The pickled classifier was trained against a total of close to **33,000** emails picked from publicly available [enron dataset](https://www.cs.cmu.edu/~./enron/). You can find the `full_corpus` directory, which holds the training emails [here](https://github.com/prodicus/spamfilter/tree/master/data)
 
 #### How accurate is it
 
@@ -109,7 +112,7 @@ I will leave that to you to decide upon. But for the questions sake, decent enou
 - [x] Deploying to heroku
 - [ ] Improving the UI
 - [ ] Writing tests
-- [ ] Creating an REST API
+- [ ] :soon: Creating an REST API
 
 ***
 
