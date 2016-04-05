@@ -2,12 +2,10 @@
     
 An intelligent spam filtering system built using a `custom Naive Bayes classifier`
 
-**You can try it out here at [https://plino.heroku.com/](https://plino.heroku.com/)**
+**:arrow_forward: You can try it out here at [https://plino.heroku.com/](https://plino.heroku.com/)**
 
-<!-- <p align="center">
-    <img width="320" src="http://i.imgur.com/TPXlkCH.jpg">
-</p>
- -->
+>This app is based on the work I did on [https://github.com/prodicus/spamfilter]
+
 
 ***
 
@@ -27,21 +25,26 @@ An intelligent spam filtering system built using a `custom Naive Bayes classifie
 - [Roadmap](#roadmap)
 - [Legal stuff](#legal-stuff)
 
+***
 
 ## Screenshots
+[:arrow_up: Back to top](https://github.com/prodicus/plino#plino)
 
-<center><p><strong>Ham Mail</strong></p></center>
+### For Ham Mail
 
 <center><img src="http://i.imgur.com/5dUkBDp.jpg"></center>
 
 
 ***
 
-<center><p><strong>Spam Mail</strong></p></center>
+### For Spam Mail
 
 <center><img src="http://i.imgur.com/v0dEJZj.jpg"></center>
 
+***
+
 ## Technologies used
+[:arrow_up: Back to top](https://github.com/prodicus/plino#plino)
 
 Built upon the giant shoulders of the following awesome (__in no particular order__)
 
@@ -63,8 +66,10 @@ Built upon the giant shoulders of the following awesome (__in no particular orde
 - [Bootstrap](http://getbootstrap.com)
 - [Jquery](https://jquery.com/)
 
+***
 
 ## Development
+[:arrow_up: Back to top](https://github.com/prodicus/plino#plino)
 
 #### Installing it locally
 
@@ -79,11 +84,14 @@ $ pip install -r requirements.txt
 $ make run
 ```
 
+***
+
 ## FAQ
+[:arrow_up: Back to top](https://github.com/prodicus/plino#plino)
 
 #### What is the classifier based on 
 
-__This repo is build directly on the work I did on [prodicus/spamfilter](https://github.com/prodicus/spamfilter)__
+This repo is build directly on the work I did on [prodicus/spamfilter](https://github.com/prodicus/spamfilter)
 
 #### What did you train the classifier on
 
@@ -93,14 +101,20 @@ The pickled classifier was trained against a total of close to **33,000** emails
 
 I will leave that to you to decide upon. But for the questions sake, decent enough! :smile:
 
+***
+
 ## Roadmap
+[:arrow_up: Back to top](https://github.com/prodicus/plino#plino)
 
 - [x] Deploying to heroku
 - [ ] Improving the UI
 - [ ] Writing tests
 - [ ] Creating an REST API
 
+***
+
 ## Legal Stuff
+[:arrow_up: Back to top](https://github.com/prodicus/plino#plino)
 
 Licensed under [GNU GPLv3](https://github.com/prodicus/alice/tree/master/LICENSE)
 

@@ -1,6 +1,6 @@
 # ignore the virtualenv folder
 venv
-logfiles/
+# logfiles/ ## commenting it out as it caused an error when running on heroku
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
