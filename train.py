@@ -2,7 +2,7 @@
 # @Author: Tasdik Rahman
 # @Date:   2016-03-12
 # @Last Modified by:   Tasdik Rahman
-# @Last Modified time: 2016-04-05 15:27:04
+# @Last Modified time: 2016-04-05 16:32:19
 # @GPLv3 License
 # @http://tasdikrahman.me
 # @https://github.com/prodicus/spamfilter
@@ -23,9 +23,14 @@ import mimetypes
 
 import logging
 import bs4
+from termcolor import colored
+
+# specify the folder `/path_to_plino/nltk_data/` as heroku will not be having
+# the nltk installed in it!
+import nltk
+nltk.data.path.append('./nltk_data/')
 from nltk.corpus import stopwords
 from nltk import stem  # uses PoterStemmer()
-from termcolor import colored
 
 from classifier import NaiveBayesClassifier
 
