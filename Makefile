@@ -1,6 +1,5 @@
-run:
-	python heroku_classifier.py
-
+run: clean
+	gunicorn -b 127.0.0.1:8000 app:app
 
 clean:
 	-find . -name '*.pyc' -delete

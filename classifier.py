@@ -2,10 +2,10 @@
 # @Author: Tasdik Rahman
 # @Date:   2016-03-12
 # @Last Modified by:   Tasdik Rahman
-# @Last Modified time: 2016-03-24 11:36:50
-# @MIT License
+# @Last Modified time: 2016-04-05 15:27:25
+# @GPLv3 License
 # @http://tasdikrahman.me
-# @https://github.com/prodicus
+# @https://github.com/prodicus/spamfilter
 
 """
 Rolling my own Implementation of Naive Bayes algorithm.

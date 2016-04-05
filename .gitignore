@@ -1,6 +1,5 @@
-#### joe made this: http://goel.io/joe
-
-#####=== Python ===#####
+# ignore the virtualenv folder
+venv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

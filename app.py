@@ -2,14 +2,25 @@
 # @Author: Tasdik Rahman
 # @Date:   2016-03-30
 # @Last Modified by:   Tasdik Rahman
-# @Last Modified time: 2016-03-30 22:12:37
+# @Last Modified time: 2016-04-05 11:48:44
 # @MIT License
 # @http://tasdikrahman.me
 # @https://github.com/prodicus
 
+import os
+import logging
+
 from flask import Flask , jsonify, render_template, request
 import dill
 import bs4
+
+
+logging.basicConfig(
+    filename=os.path.join('logfiles', 'logfile.txt'),
+    level=logging.DEBUG,
+    filemode='w',
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 
 app = Flask(__name__)
 
@@ -30,6 +41,7 @@ def index():
 def classify():
     email_text = request.form['message']
 
+
     # === Preprocessing ==== #
     email_text = bs4.UnicodeDammit.detwingle(
         email_text).decode('utf-8')
@@ -40,7 +52,15 @@ def classify():
                     trainer_object.extract_features(email_text)
                 )
     response = {'category': hamorspam, 'status': 'ok'}
+
+    # logging the message and the response for it, spam or ham
+    logging.info("TEXT: '{0}' :: RESPONSE : '{1}'".format(
+        email_text.replace("\n", " ").replace("\r", " "),
+        hamorspam
+        )
+    )
+
     return jsonify(response)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8000)
+    app.run(debug=True)

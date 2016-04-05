@@ -1,6 +1,1 @@
-2016-03-30 22:46:24,403 - WARNING -  * Debugger is active!
-2016-03-30 22:46:24,440 - INFO -  * Debugger pin code: 235-109-322
-2016-03-30 22:46:24,601 - INFO - 127.0.0.1 - - [30/Mar/2016 22:46:24] "GET / HTTP/1.1" 200 -
-2016-03-30 22:46:25,185 - INFO - 127.0.0.1 - - [30/Mar/2016 22:46:25] "GET /static/css/bootstrap.css HTTP/1.1" 200 -
-2016-03-30 22:46:25,195 - INFO - 127.0.0.1 - - [30/Mar/2016 22:46:25] "GET /static/js/jquery.js HTTP/1.1" 200 -
-2016-03-30 22:46:33,013 - INFO - 127.0.0.1 - - [30/Mar/2016 22:46:33] "POST /api/classify HTTP/1.1" 200 -
+2016-04-05 15:13:41,097 - INFO - TEXT: 'Here are this week's three links that are worth your time:  1. If mobile apps are the past, what's the future? (9 minute read):  http://bit.ly/1Ma5N1u  2. Watch this video of a programmer turning Super Mario World into Flappy  Bird using a technique called Code Injection (6 minute video):  http://bit.ly/1S4M53h  3. Tor is a powerful tool for anonymously using the internet, but it's not  without its problems - most notably, as a safe haven for spammers (8 minute  read): http://bit.ly/1Tx6yDa  Bonus: 7,300 people have completed our survey of new coders. Read about our  methodology, see live results, and take the survey here:  http://bit.ly/21UoGXR' :: RESPONSE : 'spam'
