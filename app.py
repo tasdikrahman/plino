@@ -2,13 +2,14 @@
 # @Author: Tasdik Rahman
 # @Date:   2016-03-30
 # @Last Modified by:   Tasdik Rahman
-# @Last Modified time: 2016-04-05 11:48:44
+# @Last Modified time: 2016-04-05 16:17:25
 # @MIT License
 # @http://tasdikrahman.me
 # @https://github.com/prodicus
 
 import os
 import logging
+import sys
 
 from flask import Flask , jsonify, render_template, request
 import dill
@@ -23,6 +24,10 @@ logging.basicConfig(
 )
 
 app = Flask(__name__)
+
+# for debugging purposes
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 
 classifier_file = open('saved_classifiers/spam_classifier.pickle', 'rb')
 classifier_object = dill.load(classifier_file)
@@ -54,11 +59,6 @@ def classify():
     response = {'category': hamorspam, 'status': 'ok'}
 
     # logging the message and the response for it, spam or ham
-    logging.info("TEXT: '{0}' :: RESPONSE : '{1}'".format(
-        email_text.replace("\n", " ").replace("\r", " "),
-        hamorspam
-        )
-    )
 
     return jsonify(response)
 
