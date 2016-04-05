@@ -1,5 +1,6 @@
 # ignore the virtualenv folder
 venv
+logfiles/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

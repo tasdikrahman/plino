@@ -2,7 +2,7 @@
 # @Author: Tasdik Rahman
 # @Date:   2016-03-30
 # @Last Modified by:   Tasdik Rahman
-# @Last Modified time: 2016-04-05 16:48:15
+# @Last Modified time: 2016-04-05 18:49:45
 # @MIT License
 # @http://tasdikrahman.me
 # @https://github.com/prodicus
@@ -15,25 +15,22 @@ from flask import Flask , jsonify, render_template, request
 import dill
 import bs4
 
-
-logging.basicConfig(
-    filename=os.path.join('logfiles', 'logfile.txt'),
-    level=logging.DEBUG,
-    filemode='w',
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
-
 app = Flask(__name__)
 
 # for debugging purposes
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
 
-classifier_file = open('saved_classifiers/spam_classifier.pickle', 'rb')
+APP = os.path.abspath(__file__)
+APP_DIR, APP_NAME = os.path.split(APP)
+
+classifier_file_path = os.path.join(APP_DIR, 'saved_classifiers', 'spam_classifier.pickle')
+classifier_file = open(classifier_file_path, 'rb')
 classifier_object = dill.load(classifier_file)
 classifier_file.close()
 
-trainer_file = open('saved_classifiers/trainer.pickle', 'rb')
+trainer_file_path = os.path.join(APP_DIR, 'saved_classifiers', 'trainer.pickle')
+trainer_file = open(trainer_file_path, 'rb')
 trainer_object = dill.load(trainer_file)
 trainer_file.close()
 
@@ -58,6 +55,13 @@ def classify():
                         trainer_object.extract_features(email_text)
                     )
         response = {'category': hamorspam, 'status': 'ok'}
+
+        # anything printed to the STDOUT will be stored in heroku's logs
+        print "TEXT: '{0}' :: RESPONSE : '{1}'".format(     
+                    email_text.replace("\n", " ").replace("\r", " "),     
+                    hamorspam
+                )
+
         return jsonify(response)
     except UnicodeEncodeError:
         hamorspam = 'UnicodeEncodeError'

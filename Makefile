@@ -12,7 +12,8 @@ clean:
 	-find . -name '__pycache__' -delete
 
 run: clean
-	gunicorn -b 127.0.0.1:8000 app:app
+	# to be used when testing locally
+	gunicorn --pythonpath plino app:app
 
 build: clean
 	# deploys app to heroku as well pushes the latest commits to the github
