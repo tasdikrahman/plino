@@ -50,11 +50,12 @@ Built upon the giant shoulders of (__in no particular order__)
 
 #### Backend
 
-- [Flask](http://flask.pocoo.org/) as `Django` would have been an overkill for this!
+- [Flask](http://flask.pocoo.org/) because __I ♥ `Flask` more than [`Django`](https://www.djangoproject.com/)__
+- [Flask-RESTful]() for the `REST API`. :soon:
 - [nltk](http://nltk.org) for text pre-processing
 - [gunicorn](http://gunicorn.org/) as the production server
 - [beautifulsoup4](http://www.crummy.com/software/BeautifulSoup/) for handling unicode issues
-- [Jinja2](jinja.pocoo.org/) as the templating engine
+- [Jinja2](http://jinja.pocoo.org/) as the templating engine
 - [dill](https://pypi.python.org/pypi/dill) for de-serializing complex python objects
 
 [and some more](https://github.com/prodicus/plino/blob/master/requirements.txt)

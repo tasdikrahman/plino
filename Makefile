@@ -21,6 +21,11 @@ deploy: clean
 	git push -u origin master
 	git push -u heroku master
 
+force-deploy: clean
+	## DONT DO THIS! EVEN IF THE WORLD COMES TO AN END!
+	git push -u origin master --force
+	git push -u heroku master --force
+
 .PHONY: help
 help:
 	@echo "\nPlease call with one of these targets:\n"
