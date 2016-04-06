@@ -2,7 +2,7 @@
 # @Author: Tasdik Rahman
 # @Date:   2016-03-30
 # @Last Modified by:   Tasdik Rahman
-# @Last Modified time: 2016-04-05 18:49:45
+# @Last Modified time: 2016-04-06 15:51:37
 # @MIT License
 # @http://tasdikrahman.me
 # @https://github.com/prodicus
@@ -67,6 +67,10 @@ def classify():
         hamorspam = 'UnicodeEncodeError'
         response = {'category': hamorspam, 'status': 'error'}
         return jsonify(response)
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html'), 404
         
 if __name__ == "__main__":
     app.run(debug=True)
