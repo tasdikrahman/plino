@@ -1,11 +1,10 @@
-## plino
-    
-An intelligent spam filtering system built using a `custom Naive Bayes classifier`
+<center><img src="https://raw.githubusercontent.com/prodicus/plino/gh-pages/images/logo_3.png?token=AEdMBrs0HPyPBmDXJY0dbcPMJ0bsYZRhks5XD5_6wA%3D%3D"></center>
+
+> An intelligent spam filtering system built using a **custom Naive Bayes classifier**
 
 **:arrow_forward: You can try it out here at [https://plino.heroku.com/](https://plino.heroku.com/)**
 
 >This app is based directly on the work I did on [https://github.com/prodicus/spamfilter](https://github.com/prodicus/spamfilter)
-
 
 ***
 
