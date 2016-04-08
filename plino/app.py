@@ -12,7 +12,7 @@ import sys
 
 from flask import Flask , jsonify, render_template, request
 
-from plino.utils import ham_or_spam
+from utils import ham_or_spam
 
 app = Flask(__name__)
 
@@ -24,6 +24,10 @@ app.logger.setLevel(logging.ERROR)
 @app.route('/index')
 def index():
     return render_template('index.html')
+
+@app.route('/about/')
+def about(name = None):
+	return render_template('about.html', name = name)
 
 @app.route('/api/classify',methods=['POST'])
 def classify():
