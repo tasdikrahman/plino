@@ -2,7 +2,7 @@
 # @Author: Tasdik Rahman
 # @Date:   2016-03-30
 # @Last Modified by:   Tasdik Rahman
-# @Last Modified time: 2016-04-06 18:17:36
+# @Last Modified time: 2016-04-08 19:33:28
 # @MIT License
 # @http://tasdikrahman.me
 # @https://github.com/prodicus
@@ -11,10 +11,17 @@ import logging
 import sys
 
 from flask import Flask , jsonify, render_template, request
+from flask.ext.cache import Cache
 
 from utils import ham_or_spam
 
 app = Flask(__name__)
+
+
+# defining the app settings for caching
+# TODO: use 'memcache' or 'redis' later than using the browser inmemory
+app.config['CACHE_TYPE'] = 'simple'
+app.cache = Cache(app)
 
 # for debugging purposes
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
@@ -22,10 +29,12 @@ app.logger.setLevel(logging.ERROR)
 
 @app.route('/')
 @app.route('/index')
+@app.cache.cached(timeout=300)
 def index():
     return render_template('index.html')
 
 @app.route('/about/')
+@app.cache.cached(timeout=300)
 def about(name = None):
 	return render_template('about.html', name = name)
 
@@ -36,8 +45,9 @@ def classify():
     return jsonify(ham_or_spam(email_text))
 
 @app.errorhandler(404)
+@app.cache.cached(timeout=300)
 def page_not_found(error):
     return render_template('404.html'), 404
         
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()

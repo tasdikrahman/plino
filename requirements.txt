@@ -12,6 +12,9 @@ itsdangerous==0.24
 Jinja2==2.8
 Flask==0.10.1
 
+# Flask Caching
+Flask-Cache==0.13.1
+
 # REST API requirements
 python-dateutil==2.5.2
 pytz==2016.3

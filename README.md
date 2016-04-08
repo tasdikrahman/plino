@@ -1,4 +1,4 @@
-<center><img src="https://raw.githubusercontent.com/prodicus/plino/gh-pages/images/logo_3.png?token=AEdMBrs0HPyPBmDXJY0dbcPMJ0bsYZRhks5XD5_6wA%3D%3D"></center>
+<center><img src="https://raw.githubusercontent.com/prodicus/plino/gh-pages/images/logo_2.png?token=AEdMBkvEtWYtyO50OjnlksEt5Qpslm4Yks5XEPPKwA%3D%3D"></center>
 
 > An intelligent spam filtering system built using a **custom Naive Bayes classifier**
 
@@ -17,6 +17,7 @@
 - [Contributing](#contributing)
     - [Installing it locally](#installing-it-locally)
     - [Running it](#running-it)
+    - [Contributers](#contributers)
 - [FAQ](#faq)
     - [What is the classifier based on](#what-is-the-classifier-based-on)
     - [What did you train the classifier on](#what-did-you-train-the-classifier-on)
@@ -50,10 +51,10 @@ Built upon the giant shoulders of (__in no particular order__)
 #### Backend
 
 - [Flask](http://flask.pocoo.org/) because __I ♥ `Flask` more than [`Django`](https://www.djangoproject.com/)__
-- [Flask-RESTful]() for the `REST API`. :soon:
+- [Flask-RESTful](http://flask-restful.readthedocs.org/) for the `REST API`. coming :soon:
+- [Flask-Cache](https://pythonhosted.org/Flask-Cache/) for **caching**
 - [nltk](http://nltk.org) for text pre-processing
 - [gunicorn](http://gunicorn.org/) as the production server
-- [beautifulsoup4](http://www.crummy.com/software/BeautifulSoup/) for handling unicode issues
 - [Jinja2](http://jinja.pocoo.org/) as the templating engine
 - [dill](https://pypi.python.org/pypi/dill) for de-serializing complex python objects
 
@@ -61,8 +62,9 @@ Built upon the giant shoulders of (__in no particular order__)
 
 #### Front end
 
-- [Bootstrap](http://getbootstrap.com)
+- [MaterializeCSS](http://materializecss.com/)
 - [Jquery](https://jquery.com/)
+- [WowJS](https://github.com/matthieua/WOW)
 
 ***
 
@@ -86,6 +88,10 @@ $ make run
 ```
 
 **Refer [CONTRIBUTING.md](https://github.com/prodicus/plino/blob/master/CONTRIBUTING.md) for detailed reference**
+
+#### Contributers
+
+- [Nitesh Sharma (sinscary)](https://github.com/sinscary) : **UI dev**
 
 ***
 
@@ -138,4 +144,3 @@ Licensed under [GNU GPLv3](https://github.com/prodicus/alice/tree/master/LICENSE
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 You can find the full copy of the `LICENSE` [here](https://github.com/prodicus/alice/tree/master/LICENSE)
-
