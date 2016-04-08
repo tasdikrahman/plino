@@ -25,6 +25,10 @@ app.logger.setLevel(logging.ERROR)
 def index():
     return render_template('index.html')
 
+@app.route('/about/')
+def about(name = None):
+	return render_template('about.html', name = name)
+
 @app.route('/api/classify',methods=['POST'])
 def classify():
     # get the input text email

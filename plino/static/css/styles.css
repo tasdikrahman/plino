@@ -1,0 +1,144 @@
+/*# -*- coding: utf-8 -*-
+# @Author:  Nitesh Sharma
+# @Date:   2016-03-14
+# @Last Modified by:   Nitesh Sharma
+# @Last Modified time: 2016-03-29 07:17:50
+# @GPLv3 License
+# @https://github.com/sinscary
+*/
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+main {
+	flex: 1 0 auto;
+    background-color: #E7FFFF;
+}
+
+nav .nav-wrapper{
+	background-color:#FFFFFF; opacity: 1 !important;
+    padding-top: 6px;
+    height: 70px;
+}
+
+
+
+.circle-n{
+    margin-top: 500px;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 25px;
+    font-size: 40px;
+    font-weight: 40px;
+    text-align: center;
+    padding-top: 0.5%;
+
+}
+
+/*.shadow{
+  -moz-box-shadow: rgba(0, 0, 0, 1) 5px 5px 200px inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 1) 5px 5px 200px inset;
+  box-shadow: rgba(0, 0, 0, 1) 5px 5px 200px inset;
+}*/
+
+.background-img{
+    height: 650px;
+    background: url(../images/background1.png) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+/*    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);*/
+}
+
+
+/*nav .nav-wrapper >ul>li>a:hover{
+    background-color: #0097a7;
+}*/
+
+.contents{
+	padding-top: 50px;
+}
+
+.div-side{
+    box-shadow: 0 0 1px grey;
+    background-color:;
+    padding-top: 100px;
+}
+
+footer.page-footer{
+	background-color: #FFFFFF ;
+    box-shadow: 0 1px grey;
+}
+
+footer.page-footer .footer-copyright{
+    background-color: #FFFFFF ;
+}
+
+.fa-github {
+    background: black;
+} 
+.fa-twitter {
+    background:#00aced;
+}
+
+.circle{
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 25px;
+    text-align: center;
+    padding-top: 2%;
+
+}
+/*
+a:hover{
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+
+}*/
+.image-style{
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+}
+
+#preloader {
+        position: fixed;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        background-color:#fff; 
+        z-index:99; 
+    }
+
+    #status {
+        width:200px;
+        height:200px;
+        position:absolute;
+        left:50%; 
+        top:50%; /* centers the loading animation vertically one the screen */
+        background-image:url(../images/status.gif); /* path to your loading animation */
+        background-repeat:no-repeat;
+        background-position:center;
+        margin:-100px 0 0 -100px; /* is width and height divided by two */
+    }
