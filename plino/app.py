@@ -12,7 +12,7 @@ import sys
 
 from flask import Flask , jsonify, render_template, request
 
-from plino.utils import ham_or_spam
+from utils import ham_or_spam
 
 app = Flask(__name__)
 
