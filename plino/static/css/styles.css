@@ -25,11 +25,40 @@ nav .nav-wrapper{
     height: 70px;
 }
 
+nav ul a{
+    font-size: 14px;
+    font-weight: 600;
+    color: grey;
+    line-height: 60px;
+}
 
+nav .nav-wrapper i{
+    line-height: 60px;
+}
+
+nav ul a:hover{
+    background-color: #FFFFFF;
+    color:black;
+}
+
+
+
+/*.active{
+    border-bottom: 5px solid #2ec866;
+    color: black;
+    background-color: #FFFFFF;
+}
+
+nav ul a:focus{
+    border-bottom: 5px solid #2ec866;
+    color: black;
+    background-color: #FFFFFF;
+}*/
 
 .circle-n{
-    margin-top: 500px;
+    margin-top: 50px;
     color: #fff;
+    background-color: black;
     width: 50px;
     height: 50px;
     border: 2px solid white;
@@ -41,11 +70,11 @@ nav .nav-wrapper{
 
 }
 
-/*.shadow{
-  -moz-box-shadow: rgba(0, 0, 0, 1) 5px 5px 200px inset;
-  -webkit-box-shadow: rgba(0, 0, 0, 1) 5px 5px 200px inset;
-  box-shadow: rgba(0, 0, 0, 1) 5px 5px 200px inset;
-}*/
+.shadow{
+  -moz-box-shadow: #0E4267 5px 5px 200px inset;
+  -webkit-box-shadow: #0E4267 5px 5px 200px inset;
+  box-shadow: #0E4267 5px 5px 200px inset;
+}
 
 .background-img{
     height: 650px;
@@ -144,3 +173,21 @@ a:hover{
     background-position:center;
     margin:-100px 0 0 -100px; /* is width and height divided by two */
 }
+
+h1{
+    font-size: 6em;
+    text-shadow:0 6px 1px rgba(0, 0, 0, 0.2);
+    font-family:'Arial' 'Lobster', cursive;
+    font-weight: bold;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+

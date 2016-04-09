@@ -4,7 +4,7 @@
 # @Date:   2016-03-14
 # @Last Modified by:   Nitesh Sharma, Tasdik Rahman
 # @Last Modified time: 2016-03-29 07:17:50
-# @MIT License
+# @@GPLv3 License
 # @https://github.com/sinscary
 -->
 <!DOCTYPE html>
@@ -60,18 +60,34 @@
       			<a href="{{ url_for('index') }}" class="black-text brand-logo"><img src="/static/images/logo_2.png" style="margin-left:30px;"></a>
       			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons" style="color:black">menu</i></a>
       			<ul class="right hide-on-med-and-down">
-        				<li><a href="{{ url_for('index') }}" class="black-text">Home</a></li>
-        				<li><a href="{{ url_for('about') }}" class="black-text">About</a></li>
+        				<li id="index" class=""><a href="{{ url_for('index') }}" class="">Home
+                  <i class="material-icons left" style="font-size:20px;margin-right:1px;">home</i>
+                </a></li>
+        				<li id="about" class=""><a href="" class="">About
+                  <i class="material-icons left" style="font-size:20px;margin-right:1px;">info</i>
+                </a></li>
       			</ul>
       			<ul class="side-nav" id="mobile-demo">
       				<li><a href="{{ url_for('index') }}" class="black-text">Home</a></li>
-      				<li><a href="{{ url_for('about') }}" class="black-text">About</a></li>
+      				<li><a href="" class="black-text">About</a></li>
       			</ul>
     			</div>
   		</nav>
   	</div>
 
     <div class="background-img shadow">
+      <center><h1 class="white-text">Plino</h1></center>
+      <center><h3 class="white-text">A spam filter build on Naive Bayes Algorithm.</h3></center><br><br>
+      <center><h1 class="white-text">Features</h1></center>
+      <center>
+        <ul>
+          <li class="white-text">Build with Python and nltk</li>
+          <li class="white-text">Nearly 70-80% of Accuracy</li>
+          <li class="white-text">Platform Independent</li>
+          <li class="white-text">Full Featured API(Coming Soon)</li>
+          <li class="white-text">Tested and trained on large dataset</li>
+        </ul>
+      </center>
       <center><a href="#textarea1" id="slidedown"><i class="fa fa-angle-down circle-n wow bounceInDown" data-wow-duration="2000ms" data-wow-delay="600ms"></i></a></center>
     </div>
 
@@ -83,7 +99,6 @@
 
 
     <!-- Footer starts -->
-    {% block footer %}
     <!-- 
     <footer class="page-footer">
       	<div class="">
@@ -112,7 +127,7 @@
 
     <!-- trying out a responsive one -->
     <!-- css defined in /static/css/footer-distributed.css -->
-    <footer class="footer-distributed">
+    <footer class="footer-distributed" style="margin-top:0px">
       <div class="footer-right">
 
         <a href="https://github.com/prodicus/plino" target="_blank"><i class="fa fa-github"></i></a>
@@ -135,7 +150,6 @@
       </div>
 
     </footer>
-    {% endblock %}
 
     <!-- Footer ends -->
 
@@ -173,7 +187,6 @@
     	$(document).ready(function(){
     		$(".button-collapse").sideNav();
     		$('#textarea1').trigger('autoresize');
-
         $("#slidedown").click(function() {
             $('html, body').animate({
                 scrollTop: $("#main-content").offset().top

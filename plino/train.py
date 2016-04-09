@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Tasdik Rahman
 # @Date:   2016-03-12
-# @Last Modified by:   Tasdik Rahman
+# @Last Modified by:   Tasdik Rahman, Nitesh Sharma
 # @Last Modified time: 2016-04-05 22:49:45
 # @GPLv3 License
 # @http://tasdikrahman.me
