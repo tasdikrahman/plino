@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -54,26 +54,26 @@
     <div id="preloader">
       <div id="status">&nbsp;</div>
     </div>
-  	<div class="navbar-fixed" id="navbarfix">
-  		<nav>
-    			<div class="nav-wrapper z-depth-1">
-      			<a href="{{ url_for('index') }}" class="black-text brand-logo"><img src="/static/images/logo_2.png" style="margin-left:30px;"></a>
-      			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons" style="color:black">menu</i></a>
-      			<ul class="right hide-on-med-and-down">
-        				<li id="index" class=""><a href="{{ url_for('index') }}" class="">Home
+    <div class="navbar-fixed" id="navbarfix">
+      <nav>
+          <div class="nav-wrapper z-depth-1">
+            <a href="{{ url_for('index') }}" class="black-text brand-logo"><img src="/static/images/logo_2.png" style="margin-left:30px;"></a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons" style="color:black">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li id="index" class=""><a href="{{ url_for('index') }}" class="">Home
                   <i class="material-icons left" style="font-size:20px;margin-right:1px;">home</i>
                 </a></li>
-        				<li id="about" class=""><a href="" class="">About
+                <li id="about" class=""><a href="{{ url_for('about') }}" class="">About
                   <i class="material-icons left" style="font-size:20px;margin-right:1px;">info</i>
                 </a></li>
-      			</ul>
-      			<ul class="side-nav" id="mobile-demo">
-      				<li><a href="{{ url_for('index') }}" class="black-text">Home</a></li>
-      				<li><a href="" class="black-text">About</a></li>
-      			</ul>
-    			</div>
-  		</nav>
-  	</div>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+              <li><a href="{{ url_for('index') }}" class="black-text">Home</a></li>
+              <li><a href="{{ url_for('about') }}" class="black-text">About</a></li>
+            </ul>
+          </div>
+      </nav>
+    </div>
 
     <div class="background-img shadow">
       <center><h1 class="white-text">Plino</h1></center>
@@ -91,38 +91,38 @@
       <center><a href="#textarea1" id="slidedown"><i class="fa fa-angle-down circle-n wow bounceInDown" data-wow-duration="2000ms" data-wow-delay="600ms"></i></a></center>
     </div>
 
-  	<main class="div-side" id="main-content">
-  		<div class="container contents">
-  	    	{% block content %}{% endblock %}    
-  	  </div>
+    <main class="div-side" id="main-content">
+      <div class="">
+          {% block content %}{% endblock %}    
+      </div>
     </main>
 
 
     <!-- Footer starts -->
     <!-- 
     <footer class="page-footer">
-      	<div class="">
-        	<div class="row">
-        		<div class="col l2 offset-l1 s12">
-	            	<h5 class="black-text wow slideInLeft" data-wow-duration="1500ms" data-wow-delay="300ms"><a class="black-text text-lighten-3" href="#!">Plino</a></h5>
-	            	<ul>
-	              		<li class="wow slideInLeft"  data-wow-duration="1500ms" data-wow-delay="300ms"><a class="black-text text-lighten-3" href="#!">Home</a></li>
+        <div class="">
+          <div class="row">
+            <div class="col l2 offset-l1 s12">
+                <h5 class="black-text wow slideInLeft" data-wow-duration="1500ms" data-wow-delay="300ms"><a class="black-text text-lighten-3" href="#!">Plino</a></h5>
+                <ul>
+                    <li class="wow slideInLeft"  data-wow-duration="1500ms" data-wow-delay="300ms"><a class="black-text text-lighten-3" href="#!">Home</a></li>
                 </ul>
                 <ul>
-	              		<li class="wow slideInLeft"  data-wow-duration="1500ms" data-wow-delay="300ms"><a class="black-text text-lighten-3" href="#!"><a class="black-text text-lighten-3" href="#!">About us</a></li>
-	            	</ul>
-	          	</div>
-	          	<div class=" col l4 offset-l5 s12">
+                    <li class="wow slideInLeft"  data-wow-duration="1500ms" data-wow-delay="300ms"><a class="black-text text-lighten-3" href="#!"><a class="black-text text-lighten-3" href="#!">About us</a></li>
+                </ul>
+              </div>
+              <div class=" col l4 offset-l5 s12">
                     <a class="social-icons" href="http://twitter.com/"><i class="fa fa-twitter circle wow slideInRight" data-wow-duration="1500ms" data-wow-delay="300ms"></i></a>
                     <a class="social-icons" href="http://github.com/prodicus/plino"><i class="fa fa-github circle wow slideInRight" data-wow-duration="1500ms" data-wow-delay="300ms"></i></a>
-	          	</div>
-        	</div>
-      	</div>
-      	<div class="footer-copyright">
-        	<div class="container">
-        		<center class="black-text wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">© 2016 Copyright</center>
-        	</div>
-      	</div>
+              </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            <center class="black-text wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">© 2016 Copyright</center>
+          </div>
+        </div>
     </footer> -->
 
     <!-- trying out a responsive one -->
@@ -138,11 +138,9 @@
 
       <div class="footer-left">
         <p class="footer-links">
-          <a href="/index">Home</a>
+          <a href="{{ url_for('index') }}">Home</a>
           ·
-          <a href="/about">About</a>
-          ·
-          <a href="#">Team</a>
+          <a href="{{ url_for('about') }}">About</a>
           ·
           <a href="https://github.com/prodicus/plino/issues" target="_blank">Questions?</a>
         </p>
@@ -153,8 +151,8 @@
 
     <!-- Footer ends -->
 
-  	<script type="text/javascript">
-		
+    <script type="text/javascript">
+    
     $("#Submit").click(function(){
         var messageTxt = $('#textarea1').val();
         if(messageTxt.length <= 10){
@@ -166,8 +164,8 @@
             if(result.category == 'spam'){
               $('#addcard').find('div:nth-child(2)').remove();
               console.log('text is a spam');
-      				$('#addcard').append('<div class="row"><div class="col s12 m6 l6"><div class="card red flow-text"><div class="card-content black-text"><span class="card-title">OOPS, it seems spam content</span><p></p></div></div></div></div>');
-      			}
+              $('#addcard').append('<div class="row"><div class="col s12 m6 l6"><div class="card red flow-text"><div class="card-content black-text"><span class="card-title">OOPS, it seems spam content</span><p></p></div></div></div></div>');
+            }
             else if(result.category == 'ham'){
               $('#addcard').find('div:nth-child(2)').remove();
               console.log('text is a ham');
@@ -180,19 +178,19 @@
             }
         });
       }
-		});
-  	</script>
+    });
+    </script>
 
     <script type="text/javascript">
-    	$(document).ready(function(){
-    		$(".button-collapse").sideNav();
-    		$('#textarea1').trigger('autoresize');
+      $(document).ready(function(){
+        $(".button-collapse").sideNav();
+        $('#textarea1').trigger('autoresize');
         $("#slidedown").click(function() {
             $('html, body').animate({
                 scrollTop: $("#main-content").offset().top
             }, 1000);
         });
-    	});
+      });
       var wow = new WOW(
         {
           boxClass:     'wow',      // animated element css class (default is wow)
