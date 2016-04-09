@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: Tasdik Rahman
 # @Date:   2016-03-30
-# @Last Modified by:   Tasdik Rahman
+# @Last Modified by:   Tasdik Rahman, Nitesh Sharma
 # @Last Modified time: 2016-04-09 14:47:55
 # @MIT License
 # @http://tasdikrahman.me
@@ -32,11 +32,6 @@ app.logger.setLevel(logging.ERROR)
 @app.cache.cached(timeout=300)
 def index():
     return render_template('index.html', title='Home')
-
-@app.route('/about/')
-@app.cache.cached(timeout=300)
-def about(name = None):
-	return render_template('about.html', title='About')
 
 @app.route('/api/classify',methods=['POST'])
 def classify():
