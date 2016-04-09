@@ -11,6 +11,9 @@
 ## Table of contents
 
 - [Demo](#demo)
+- [REST API usage](#rest-api-usage)
+    - [using `curl`](#using-curl)
+    - [using `requests` (python)](#using-requests)
 - [Technologies used](#technologies-used)
     - [Backend](#backend)
     - [Front end](#front-end)
@@ -28,30 +31,86 @@
 ***
 
 ## Demo
-[:arrow_up: Back to top](https://github.com/prodicus/plino#plino)
+[:arrow_up: Back to top](#table-of-contents)
 
 ### For Ham Mail
 
-<center><img src="http://i.imgur.com/5dUkBDp.jpg"></center>
+<center><img src="http://i.imgur.com/3EOTKcM.jpg"></center>
 
 
 ***
 
 ### For Spam Mail
 
-<center><img src="http://i.imgur.com/v0dEJZj.jpg"></center>
+<center><img src="http://i.imgur.com/2wSfHRh.jpg"></center>
+
+***
+
+## REST API usage
+[:arrow_up: Back to top](#table-of-contents)
+
+Yes, we do provide an **API** for our service!
+
+#### using `curl`
+
+
+```bash
+$ curl -i -H "Content-Type: application/json" -X POST -d '{"email_text":"<YOUR EMAIL TEXT>"}' http://plino.heroku.com/api/v1/classify/
+```
+
+**Show me an example**
+
+You thought I was lying!
+
+```bash
+$ curl -i -H "Content-Type: application/json" -X POST -d '{"email_text":"Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman"}' http://plino.heroku.com/api/v1/classify/
+HTTP/1.1 200 OK
+Server: gunicorn/19.4.5
+Date: Sat, 09 Apr 2016 14:15:49 GMT
+Connection: close
+Content-Type: application/json
+Content-Length: 507
+
+{
+  "email_class": "spam", 
+  "email_text": "Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman", 
+  "status": 200
+}
+```
+
+#### using `requests`
+[:arrow_up: Back to top](#table-of-contents)
+
+How can we forget our beloved [`requests`](https://github.com/kennethreitz/requests) module!
+
+```python
+>>> import requests
+>>> import json
+>>> api_url = "http://plino.heroku.com/api/v1/classify/"
+>>> payload = {'email_text': 'Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman'}
+>>> headers = {'content-type': 'application/json'}
+>>> response = requests.post(api_url, data=json.dumps(payload), headers=headers)
+>>> response.status_code
+200
+>>> json_data = response.json()
+>>> json_data['email_text']
+u'Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman'
+>>> json_data['email_class']
+u'spam'
+>>>
+```
+
 
 ***
 
 ## Technologies used
-[:arrow_up: Back to top](https://github.com/prodicus/plino#plino)
+[:arrow_up: Back to top](#table-of-contents)
 
 Built upon the giant shoulders of (__in no particular order__)
 
 #### Backend
 
 - [Flask](http://flask.pocoo.org/) because __I ♥ `Flask` more than [`Django`](https://www.djangoproject.com/)__
-- [Flask-RESTful](http://flask-restful.readthedocs.org/) for the `REST API`. coming :soon:
 - [Flask-Cache](https://pythonhosted.org/Flask-Cache/) for **caching**
 - [nltk](http://nltk.org) for text pre-processing
 - [gunicorn](http://gunicorn.org/) as the production server
@@ -69,7 +128,7 @@ Built upon the giant shoulders of (__in no particular order__)
 ***
 
 ## Contributing
-[:arrow_up: Back to top](https://github.com/prodicus/plino#plino)
+[:arrow_up: Back to top](#table-of-contents)
 
 #### Installing it locally
 
@@ -96,7 +155,7 @@ $ make run
 ***
 
 ## FAQ
-[:arrow_up: Back to top](https://github.com/prodicus/plino#plino)
+[:arrow_up: Back to top](#table-of-contents)
 
 #### What is the classifier based on 
 
@@ -113,17 +172,17 @@ I will leave that to you to decide upon. But for the questions sake, decent enou
 ***
 
 ## Roadmap
-[:arrow_up: Back to top](https://github.com/prodicus/plino#plino)
+[:arrow_up: Back to top](#table-of-contents)
 
 - [x] Deploying to heroku
+- [x] Creating an REST API
 - [ ] Improving the UI
 - [ ] Writing tests
-- [ ] :soon: Creating an REST API
 
 ***
 
 ## Legal Stuff
-[:arrow_up: Back to top](https://github.com/prodicus/plino#plino)
+[:arrow_up: Back to top](#table-of-contents)
 
 Licensed under [GNU GPLv3](https://github.com/prodicus/alice/tree/master/LICENSE)
 
