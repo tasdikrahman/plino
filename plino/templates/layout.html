@@ -15,13 +15,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <!-- Loadin the Stylesheets -->
+    <!-- Loading the Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/static/css/styles.css">
     <link rel="stylesheet" href="/static/css/animate.css">
-    <!-- Loadin the Stylesheets -->
+    <link rel="stylesheet" href="/static/css/footer-distributed.css">
+    <!-- Loading the Stylesheets -->
 
     <!-- Loading the JS files -->
     <script type="text/javascript" src="/static/js/jquery-2.2.2.min.js"></script>
@@ -77,12 +78,13 @@
   	<main class="div-side" id="main-content">
   		<div class="container contents">
   	    	{% block content %}{% endblock %}    
-  	   </div>
+  	  </div>
     </main>
 
 
     <!-- Footer starts -->
-    {% block footer %}  
+    {% block footer %}
+    <!-- 
     <footer class="page-footer">
       	<div class="">
         	<div class="row">
@@ -106,6 +108,32 @@
         		<center class="black-text wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">© 2016 Copyright</center>
         	</div>
       	</div>
+    </footer> -->
+
+    <!-- trying out a responsive one -->
+    <!-- css defined in /static/css/footer-distributed.css -->
+    <footer class="footer-distributed">
+      <div class="footer-right">
+
+        <a href="https://github.com/prodicus/plino" target="_blank"><i class="fa fa-github"></i></a>
+        <a href="#"><i class="fa fa-product-hunt"></i></a>
+        <a href="#"><i class="fa fa-hacker-news"></i></a>
+        <a href="https://twitter.com/tasdikrahman" target="_blank"><i class="fa fa-twitter"></i></a>
+      </div>
+
+      <div class="footer-left">
+        <p class="footer-links">
+          <a href="/index">Home</a>
+          ·
+          <a href="/about">About</a>
+          ·
+          <a href="#">Team</a>
+          ·
+          <a href="https://github.com/prodicus/plino/issues" target="_blank">Questions?</a>
+        </p>
+        <p><strong>Plino</strong> &copy; 2016</p>
+      </div>
+
     </footer>
     {% endblock %}
 
@@ -115,10 +143,6 @@
 		
     $("#Submit").click(function(){
         var messageTxt = $('#textarea1').val();
-        /*var unicodeErrorTxt = "Looks like we had an Encoding issue! Please try something different";
-        $('#unicodeError').removeClass("alert alert-warning");
-        $('#result').removeClass("alert alert-danger");
-        $('#result').removeClass("alert alert-success");*/
         if(messageTxt.length <= 10){
           $('#addcard').append('<div class="row"><div class="col s12 m6 l6"><div class="card red"><div class="card-content black-text"><span class="card-title">Please give me more text to analyze!</span><p></p></div></div></div></div>');
         }
