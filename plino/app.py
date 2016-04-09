@@ -2,7 +2,7 @@
 # @Author: Tasdik Rahman
 # @Date:   2016-03-30
 # @Last Modified by:   Tasdik Rahman
-# @Last Modified time: 2016-04-09 14:47:55
+# @Last Modified time: 2016-04-09 18:15:06
 # @MIT License
 # @http://tasdikrahman.me
 # @https://github.com/prodicus
@@ -10,7 +10,7 @@
 import logging
 import sys
 
-from flask import Flask , jsonify, render_template, request
+from flask import Flask, jsonify, render_template, request, abort
 from flask.ext.cache import Cache
 
 from utils import ham_or_spam
@@ -27,27 +27,49 @@ app.cache = Cache(app)
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
 
+
 @app.route('/')
 @app.route('/index')
 @app.cache.cached(timeout=300)
 def index():
     return render_template('index.html', title='Home')
 
+
 @app.route('/about/')
 @app.cache.cached(timeout=300)
-def about(name = None):
-	return render_template('about.html', title='About')
+def about(name=None):
+    return render_template('about.html', title='About')
 
-@app.route('/api/classify',methods=['POST'])
+
+@app.route('/api/classify', methods=['POST'])
 def classify():
     # get the input text email
     email_text = request.form['message']
     return jsonify(ham_or_spam(email_text))
 
+
 @app.errorhandler(404)
 @app.cache.cached(timeout=300)
 def page_not_found(error):
     return render_template('404.html', title='Page not found'), 404
-        
+
+
+# REST API v1
+@app.route('/api/v1/classify', methods=['POST'])
+@app.route('/api/v1/classify/', methods=['POST'])
+def api_v1():
+    if not request.json or not 'email_text' in request.json:
+        abort(400)
+
+    email_class = ham_or_spam(request.json['email_text'])["category"]
+    json_data = {
+        'status': 200,
+        'email_text': request.json['email_text'],
+        'email_class': email_class
+    }
+
+    return jsonify(json_data), 200
+
+
 if __name__ == "__main__":
     app.run()
