@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <!-- 
 # -*- coding: utf-8 -*-
 # @Author:  Nitesh Sharma
@@ -7,77 +6,88 @@
 # @Last Modified time: 2016-03-29 07:17:50
 # @MIT License
 # @https://github.com/sinscary
-
- -->
-
+-->
+<!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>{% block title %}Plino :: An intelligent spam filtering system{% endblock %}</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Loadin the Stylesheets -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/static/css/styles.css">
-  <link rel="stylesheet" href="/static/css/animate.css">
-  <!-- Loadin the Stylesheets -->
+  	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Loadin the Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/animate.css">
+    <!-- Loadin the Stylesheets -->
 
-  <!-- Loading the JS files -->
-  <script type="text/javascript" src="/static/js/jquery-2.2.2.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-  <script type="text/javascript" src="/static/js/wow.js"></script>
-  <script type="text/javascript">
-  //<![CDATA[
-    $(window).load(function() { // makes sure the whole site is loaded
-      $('#status').fadeOut('slow'); // will first fade out the loading animation
-      $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
-      $('body').delay(350).css({'overflow':'visible'});
-    })
-  //]]>
-  </script>
-  <!-- Loading the JS files -->
+    <!-- Loading the JS files -->
+    <script type="text/javascript" src="/static/js/jquery-2.2.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/static/js/wow.js"></script>
+    <script type="text/javascript">
+    //<![CDATA[
+      $(window).load(function() { // makes sure the whole site is loaded
+        $('#status').fadeOut('slow'); // will first fade out the loading animation
+        $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+        $('body').delay(350).css({'overflow':'visible'});
+      })
+    //]]>
+    </script>
+    <!-- Loading the JS files -->
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-  <!-- Favicon -->
-</head>
-<body>
-  <div id="preloader">
-    <div id="status">&nbsp;</div>
-  </div>
-	<div class="navbar-fixed" id="navbarfix">
-		<nav>
-  			<div class="nav-wrapper z-depth-1">
-    			<a href="{{ url_for('index') }}" class="black-text brand-logo"><img src="/static/images/logo_2.png" style="margin-left:30px;"></a>
-    			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons" style="color:black">menu</i></a>
-    			<ul class="right hide-on-med-and-down">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <!-- Favicon -->
+
+    <title>{% block page %}{{title}} :: Plino - An intelligent spam filtering system{% endblock %}</title>
+  </head>
+  <!-- Head ends -->
+  <!--  -->
+
+  <!--  -->
+  <!-- Body starts -->
+  <body>
+    <div id="preloader">
+      <div id="status">&nbsp;</div>
+    </div>
+  	<div class="navbar-fixed" id="navbarfix">
+  		<nav>
+    			<div class="nav-wrapper z-depth-1">
+      			<a href="{{ url_for('index') }}" class="black-text brand-logo"><img src="/static/images/logo_2.png" style="margin-left:30px;"></a>
+      			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons" style="color:black">menu</i></a>
+      			<ul class="right hide-on-med-and-down">
+        				<li><a href="{{ url_for('index') }}" class="black-text">Home</a></li>
+        				<li><a href="{{ url_for('about') }}" class="black-text">About</a></li>
+      			</ul>
+      			<ul class="side-nav" id="mobile-demo">
       				<li><a href="{{ url_for('index') }}" class="black-text">Home</a></li>
       				<li><a href="{{ url_for('about') }}" class="black-text">About</a></li>
-    			</ul>
-    			<ul class="side-nav" id="mobile-demo">
-    				<li><a href="{{ url_for('index') }}" class="black-text">Home</a></li>
-    				<li><a href="{{ url_for('about') }}" class="black-text">About</a></li>
-    			</ul>
-  			</div>
-		</nav>
-	</div>
-  <div class="background-img shadow">
-    <center><a href="#textarea1" id="slidedown"><i class="fa fa-angle-down circle-n wow bounceInDown" data-wow-duration="2000ms" data-wow-delay="600ms"></i></a></center>
-  </div>
-	<main class="div-side" id="main-content">
-		<div class="container contents">
-	    	{% block content %}{% endblock %}    
-	   </div>
-  </main>
+      			</ul>
+    			</div>
+  		</nav>
+  	</div>
+
+    <div class="background-img shadow">
+      <center><a href="#textarea1" id="slidedown"><i class="fa fa-angle-down circle-n wow bounceInDown" data-wow-duration="2000ms" data-wow-delay="600ms"></i></a></center>
+    </div>
+
+  	<main class="div-side" id="main-content">
+  		<div class="container contents">
+  	    	{% block content %}{% endblock %}    
+  	   </div>
+    </main>
+
+
+    <!-- Footer starts -->
+    {% block footer %}  
     <footer class="page-footer">
       	<div class="">
         	<div class="row">
         		<div class="col l2 offset-l1 s12">
-	            	<h5 class="black-text wow slideInLeft" data-wow-duration="1500ms" data-wow-delay="300ms"><a class="black-text text-lighten-3" href="#!">Spam Filter</a></h5>
+	            	<h5 class="black-text wow slideInLeft" data-wow-duration="1500ms" data-wow-delay="300ms"><a class="black-text text-lighten-3" href="#!">Plino</a></h5>
 	            	<ul>
 	              		<li class="wow slideInLeft"  data-wow-duration="1500ms" data-wow-delay="300ms"><a class="black-text text-lighten-3" href="#!">Home</a></li>
                 </ul>
@@ -87,7 +97,7 @@
 	          	</div>
 	          	<div class=" col l4 offset-l5 s12">
                     <a class="social-icons" href="http://twitter.com/"><i class="fa fa-twitter circle wow slideInRight" data-wow-duration="1500ms" data-wow-delay="300ms"></i></a>
-                    <a class="social-icons" href="http://youtube.com/"><i class="fa fa-github circle wow slideInRight" data-wow-duration="1500ms" data-wow-delay="300ms"></i></a>
+                    <a class="social-icons" href="http://github.com/prodicus/plino"><i class="fa fa-github circle wow slideInRight" data-wow-duration="1500ms" data-wow-delay="300ms"></i></a>
 	          	</div>
         	</div>
       	</div>
@@ -97,6 +107,9 @@
         	</div>
       	</div>
     </footer>
+    {% endblock %}
+
+    <!-- Footer ends -->
 
   	<script type="text/javascript">
 		
@@ -170,5 +183,6 @@
       ga('send', 'pageview');
     </script>
     <!-- Google analytics -->
-</body>
+
+  </body>
 </html>

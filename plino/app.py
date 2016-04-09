@@ -2,7 +2,7 @@
 # @Author: Tasdik Rahman
 # @Date:   2016-03-30
 # @Last Modified by:   Tasdik Rahman
-# @Last Modified time: 2016-04-08 19:33:28
+# @Last Modified time: 2016-04-09 02:34:05
 # @MIT License
 # @http://tasdikrahman.me
 # @https://github.com/prodicus
@@ -31,12 +31,12 @@ app.logger.setLevel(logging.ERROR)
 @app.route('/index')
 @app.cache.cached(timeout=300)
 def index():
-    return render_template('index.html')
+    return render_template('index.html', title='Home')
 
 @app.route('/about/')
 @app.cache.cached(timeout=300)
 def about(name = None):
-	return render_template('about.html', name = name)
+	return render_template('about.html', title='About')
 
 @app.route('/api/classify',methods=['POST'])
 def classify():
@@ -47,7 +47,7 @@ def classify():
 @app.errorhandler(404)
 @app.cache.cached(timeout=300)
 def page_not_found(error):
-    return render_template('404.html'), 404
+    return render_template('404.html', title='Page not found'), 404
         
 if __name__ == "__main__":
     app.run()
