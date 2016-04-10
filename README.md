@@ -64,7 +64,7 @@ Yes, we do provide an **API** for our service!
 
 
 ```bash
-$ curl -i -H "Content-Type: application/json" -X POST -d '{"email_text":"<YOUR EMAIL TEXT>"}' http://plino.heroku.com/api/v1/classify/
+$ curl -i -H "Content-Type: application/json" -X POST -d '{"email_text":"<YOUR EMAIL TEXT>"}' https://plino.herokuapp.com/api/v1/classify/
 ```
 
 **Show me an example**
@@ -72,7 +72,7 @@ $ curl -i -H "Content-Type: application/json" -X POST -d '{"email_text":"<YOUR E
 You thought I was lying!
 
 ```bash
-$ curl -i -H "Content-Type: application/json" -X POST -d '{"email_text":"Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman"}' http://plino.heroku.com/api/v1/classify/
+$ curl -i -H "Content-Type: application/json" -X POST -d '{"email_text":"Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman"}' https://plino.herokuapp.com/api/v1/classify/
 HTTP/1.1 200 OK
 Server: gunicorn/19.4.5
 Date: Sat, 09 Apr 2016 14:15:49 GMT
@@ -95,7 +95,7 @@ How can we forget our beloved [`requests`](https://github.com/kennethreitz/reque
 ```python
 >>> import requests
 >>> import json
->>> api_url = "http://plino.heroku.com/api/v1/classify/"
+>>> api_url = "https://plino.herokuapp.com/api/v1/classify/"
 >>> payload = {'email_text': 'Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman'}
 >>> headers = {'content-type': 'application/json'}
 >>> response = requests.post(api_url, data=json.dumps(payload), headers=headers)
@@ -118,7 +118,7 @@ u'spam'
 >>> import urllib.request
 >>> import json
 >>>
->>> url = "http://plino.heroku.com/api/v1/classify/"
+>>> url = "https://plino.herokuapp.com/api/v1/classify/"
 >>> req = urllib.request.Request(url)
 >>> req.add_header('Content-Type', 'application/json; charset=utf-8')
 >>>
