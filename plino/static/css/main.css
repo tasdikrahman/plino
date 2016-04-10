@@ -1,4 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:700,400,100);
+
+/*For team cards*/
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans);
+
+
 body {
   font-family: 'Roboto', sans-serif;
   color: #666;
@@ -697,7 +702,7 @@ textarea.vert{
   margin-top: 52px;
 }
 .contact-form i {
-  position: absolute;
+  position: relative;
   right: 15px;
 }
 .contact-form .form-control {
@@ -956,3 +961,72 @@ textarea.vert{
   top: 50px;
   left: 50px;
 }
+
+/*CSS for team cards*/
+.card {
+  background-color: #f4f4f4;
+  width: 300px;
+  margin: 10px auto;
+  box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
+}
+
+.card-header {
+  overflow: hidden;
+  width: 100%;
+  max-height: 200px;
+}
+
+.card-header img{
+  width: 100%;
+}
+
+.card-content {
+  width: 85%;
+  margin: 35px auto;
+}
+
+.card-content h3 {
+  font-size: 25px;
+  margin-bottom: 0;
+  color: #303F9F;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.card-content h4 {
+  font-size: 14px;
+  margin-top: 0;
+  color: #FF5252;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.card-content p {
+  color: #727272;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+  
+}
+
+.card-footer {
+  border-top: solid 1px #B6B6B6;
+  padding: 5px;
+}
+
+.card-footer ul {
+  padding: 0;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+.card-footer ul li{
+  display: inline-block;
+  list-style: none;
+  margin: 5px;
+}
+
+.card-footer ul li i {
+  font-size: 2em;
+  color: #3F51B5;
+}
+
+/*CSS for team cards*/
