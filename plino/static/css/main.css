@@ -442,6 +442,11 @@ a:focus {
 #cta .title-small {
   color: #fff;
 }
+
+textarea.vert{
+  resize: vertical;
+}
+
 .main-feature-gray {
   background: #ecf0f1;
 }

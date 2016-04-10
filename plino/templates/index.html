@@ -42,6 +42,7 @@
           <li class="active"><a href="#home">Home</a></li>
           <li><a href="#features">Features</a></li>
           <li><a href="#cta">Demo</a></li>
+          <li><a href="#why">Classifier features</a></li>
           <li><a href="#main-features">API usage</a></li>
           <li><a href="https://github.com/prodicus/plino" target="_blank">Github Page</a></li>
         </ul>
@@ -71,7 +72,7 @@
           <h1 class="wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="300ms">Plino - An Intelligent spam filtering System</h1>
           <p class="wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="400ms">Built on top of a Custom Well Trained Naive Bayes Classifier</p>
           <a href="#cta" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Try the Live Demo</a>
-          <a href="#features" class="btn btn-lg btn-border wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">Learn More</a>
+          <a href="#main-features" class="btn btn-lg btn-border wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">API Usage</a>
         </div>   
     </header>
 
@@ -179,9 +180,10 @@
             <!-- <h3 class="title-small wow bounce" data-wow-duration="1000ms" data-wow-delay="300ms">Join Us Today and Change Yourself</h3>
              <a href="javascript:void(0)" class="btn btn-lg btn-border">Sign Up</a> -->
              <h2 class="title-small wow bounce" data-wow-duration="1000ms" data-wow-delay="300ms">Watch Plino Live in Action</h2><br>
+
              <form class="col s12">
                  <div class="row contents" id="addcard">
-                   <div class="input-field col s12 m12 l6 wow slideInLeft" data-wow-duration="2000ms" data-wow-delay="300ms">
+                   <div class="input-field col s12 m12 l6 wow slideInLeft white-text" data-wow-duration="2000ms" data-wow-delay="300ms">
                        <textarea id="textarea1" class="materialize-textarea"></textarea>
                        <label for="textarea1" class="white-text">Enter Text to check for Spam/Ham</label>
                        <a class="btn btn-lg btn-border" id="Submit" type="submit">Classify
@@ -191,7 +193,7 @@
                  </div>
              </form>
 
-          </div>
+        </div>
       </div>
     </section>
 
@@ -592,6 +594,14 @@
 
 
     <!-- Main JS Script which calls the classifier -->
+
+    <!-- Default text inside document dorm which is a ham -->
+    <script type="text/javascript">
+      $( document ).ready(function() {
+            $('#textarea1').val("Dear Students PFA..The B.Tech IT Minor Project Final review is scheduled on 7/5/2016 and 9/5/2016.While coming for final review, A) Students should complete the 100% project and need to show the full project demo. B) Each students in a every group have to submit their report and one report + CD(Documentation+ Coding) should be submitted to the department from each group. ( report format attached with this mail ),C) Students those who are not present for a final review at correct time are considered as arrear in minor project.D) 28/4/16 is the last date for the submission of Minor Project Report to get signature from the hod.")
+          });
+    </script>
+    <!-- Default text inside document dorm which is a ham -->
 
     <script type="text/javascript">
     
