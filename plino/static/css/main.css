@@ -966,6 +966,7 @@ textarea.vert{
 .card {
   background-color: #f4f4f4;
   width: 300px;
+  height: ;
   margin: 10px auto;
   box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
 }

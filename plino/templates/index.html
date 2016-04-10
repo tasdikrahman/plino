@@ -20,7 +20,8 @@
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="/static/fonts/font-awesome.min.css" type="text/css" media="screen">
     <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
-    <link href="/static/css/material.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
     <link href="/static/css/ripples.min.css" rel="stylesheet">
     <link href="/static/css/main.css" rel="stylesheet">
     <link href="/static/css/responsive.css" rel="stylesheet">
@@ -55,7 +56,7 @@
       <div class="container">
           <div class="col-md-12">
 
-            <div class="navbar navbar-inverse sticky-navigation navbar-fixed-top" role="navigation" data-spy="affix" data-offset-top="200">
+            <div class="navbar navbar-inverse sticky-navigation navbar-fixed-top" role="navigation" data-spy="affix" data-offset-top="200" style="border-color:transparent">
               <div class="container">
                 <div class="navbar-header">
                   <a class="logo-left" class="active" href="#home"><i class="mdi-image-timelapse"></i>Plino</a>
@@ -182,7 +183,7 @@
              <h2 class="title-small wow bounce" data-wow-duration="1000ms" data-wow-delay="300ms">Watch Plino Live in Action</h2><br>
 
              <form class="col s12">
-                 <div class="row contents" id="addcard">
+                 <div class="row" id="addcard">
                    <div class="input-field col s12 m12 l6 wow slideInLeft white-text" data-wow-duration="2000ms" data-wow-delay="300ms">
                        <textarea id="textarea1" class="materialize-textarea"></textarea>
                        <label for="textarea1" class="white-text">Enter Text to check for Spam/Ham</label>
@@ -477,9 +478,9 @@
 
  
      <section id="clients" class="section">
-       <div class="container">
+       <div class="row container">
          
-         <div class="section-header text-center">
+         <div class="section-header text-center row">
            <h1 class="section-title wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">Team</h1>
            <h2 class="section-subtitle wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">The people behind Plino</h2>
          </div>
@@ -506,17 +507,17 @@
            </div>
          </div> -->
          <!-- card 1 -->
-         <div class="card">
+         <div class="card col s12 m5 offset-m1 l5 offset-l1">
            <div class="card-header">
              <img src="/static/img/team/boss_man.jpg"/>
            </div>
            <div class="card-content">
-             <!-- <h3>Tasdik Rahman</h3>
-             <h4>Python Lover, Backend guy, Sysadmin at heart.</h4> -->
-             <!-- <p>
+             <h3>Tasdik Rahman</h3>
+             <h4>Python Lover, Backend guy, Sysadmin at heart.</h4>
+             <p>
                programmer. born on the net, damned if I don’t die here. Speaks parseltongue way too often apparently. Has been wasting his weekends lately building stuff instead of studying.
                When not programming, he can be found gobbling up pizzas and listenting to rap music
-             </p> -->
+             </p>
            </div>
            <div class="card-footer">
              <ul>
@@ -544,25 +545,25 @@
          <!-- card 1 -->
 
          <!-- card 2 -->
-         <div class="card">
+         <div class="card col s12 m5 offset-m1 l5 offset-l1">
            <div class="card-header">
              <img src="/static/img/team/milf_hunter.jpg"/>
            </div>
            <div class="card-content">
-             <!-- <h3>Nitesh Sharma</h3> -->
-             <!-- <h4>Milf hunter!</h4>
-             <p>Enter content nitesh Ji</p> -->
+             <h3>Nitesh Sharma</h3>
+             <h4>Full Stack Flask, Django and Rails Developer</h4>
+             <p>A Full Stack Web Developer and JavaScripter. Mostly work on Django, Flask and Ruby on Rails FrameWorks. Also develops Hybrid Mobile apps using Ionic framework and Angular Js. Also had been Captain of state level Kabaddi Champion Team and loves Cooking in spare time</p>
            </div>
            <div class="card-footer">
              <ul>
                <li>
-                 <a href="#"><i class="fa fa-codepen"></i></a>
+                 <a href="https://www.linkedin.com/in/nitesh-sharma-437103b2"><i class="fa fa-linkedin"></i></a>
                </li>
                <li>
-                 <a href="#"><i class="fa fa-stack-overflow"></i></a>
+                 <a href="https://www.quora.com/profile/Nitesh-Sharma-61"><i class="fa fa-fw"><strong>Q</strong></i></a>
                </li>
                <li>
-                 <a href="#"><i class="fa fa-github"></i></a>
+                 <a href="https://github.com/sinscary"><i class="fa fa-github"></i></a>
                </li>
              </ul>
            </div>
@@ -675,9 +676,9 @@
     <!-- <script type="text/javascript" src="/static/js/jquery-2.2.2.min.js"></script> -->
     <script src="/static/js/jquery-2.1.4.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
     <script src="/static/js/ripples.min.js"></script>
-    <script src="/static/js/material.min.js"></script>
     <script src="/static/js/wow.js"></script>
     <script src="/static/js/jquery.mmenu.min.all.js"></script> 
     <script src="/static/js/count-to.js"></script>   
@@ -693,11 +694,6 @@
     <!-- Main JS Script which calls the classifier -->
 
     <!-- Default text inside document dorm which is a ham -->
-    <script type="text/javascript">
-      $( document ).ready(function() {
-            $('#textarea1').val("Dear Students PFA..The B.Tech IT Minor Project Final review is scheduled on 7/5/2016 and 9/5/2016.While coming for final review, A) Students should complete the 100% project and need to show the full project demo. B) Each students in a every group have to submit their report and one report + CD(Documentation+ Coding) should be submitted to the department from each group. ( report format attached with this mail ),C) Students those who are not present for a final review at correct time are considered as arrear in minor project.D) 28/4/16 is the last date for the submission of Minor Project Report to get signature from the hod.")
-          });
-    </script>
     <!-- Default text inside document dorm which is a ham -->
 
     <script type="text/javascript">
@@ -705,6 +701,7 @@
     $("#Submit").click(function(){
         var messageTxt = $('#textarea1').val();
         if(messageTxt.length <= 10){
+          $('#addcard').find('div:nth-child(2)').remove();
           $('#addcard').append('<div class="row"><div class="col s12 m6 l6"><div class="card red"><div class="card-content white-text"><span class="card-title">Please give me more text to analyze!</span><p></p></div></div></div></div>');
         }
         if (messageTxt.length > 10){
@@ -718,7 +715,7 @@
             else if(result.category == 'ham'){
               $('#addcard').find('div:nth-child(2)').remove();
               console.log('text is a ham');
-              $('#addcard').append('<div class="row"><div class="col s12 m6 l6"><div class="card green" style="margin-top:20px;"><div class="card-content white-text"><span class="card-title">Yaay, this content is spam-free</span><p></p></div></div></div></div>');
+              $('#addcard').append('<div class="row"><div class="col s12 m6 l6"><div class="card green"><div class="card-content white-text"><span class="card-title">Yaay, this content is spam-free</span><p></p></div></div></div></div>');
             }
             else if(result.category == 'UnicodeEncodeError'){
               $('#addcard').find('div:nth-child(2)').remove();
@@ -735,6 +732,8 @@
     <script>
         $(document).ready(function() {
             // This command is used to initialize some elements and make them work properly
+            $('#textarea1').val("Dear Students PFA..The B.Tech IT Minor Project Final review is scheduled on 7/5/2016 and 9/5/2016.While coming for final review, A) Students should complete the 100% project and need to show the full project demo. B) Each students in a every group have to submit their report and one report + CD(Documentation+ Coding) should be submitted to the department from each group. ( report format attached with this mail ),C) Students those who are not present for a final review at correct time are considered as arrear in minor project.D) 28/4/16 is the last date for the submission of Minor Project Report to get signature from the hod.");
+            $('#textarea1').trigger('autoresize');
             $.material.init();
         });
     </script>
