@@ -2,7 +2,7 @@
 # @Author: Tasdik Rahman
 # @Date:   2016-03-30
 # @Last Modified by:   Tasdik Rahman
-# @Last Modified time: 2016-04-09 18:15:06
+# @Last Modified time: 2016-04-10 14:27:08
 # @MIT License
 # @http://tasdikrahman.me
 # @https://github.com/prodicus
@@ -16,7 +16,6 @@ from flask.ext.cache import Cache
 from utils import ham_or_spam
 
 app = Flask(__name__)
-
 
 # defining the app settings for caching
 # TODO: use 'memcache' or 'redis' later than using the browser inmemory
@@ -33,12 +32,6 @@ app.logger.setLevel(logging.ERROR)
 @app.cache.cached(timeout=300)
 def index():
     return render_template('index.html', title='Home')
-
-
-@app.route('/about/')
-@app.cache.cached(timeout=300)
-def about(name=None):
-    return render_template('about.html', title='About')
 
 
 @app.route('/api/classify', methods=['POST'])

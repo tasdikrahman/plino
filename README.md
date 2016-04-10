@@ -216,8 +216,9 @@ I will leave that to you to decide upon. But for the questions sake, decent enou
 [:arrow_up: Back to top](#table-of-contents)
 
 - [x] Deploying to heroku
-- [x] Creating an REST API
-- [ ] Improving the UI
+- [x] Creating a REST API
+- [x] Improving the UI
+- [ ] Simple API authentication
 - [ ] Writing tests
 
 ***
