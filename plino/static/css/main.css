@@ -136,8 +136,14 @@ a:focus {
 }
 .navbar .navbar-nav li a:hover,
 .navbar .navbar-nav li .active a {
-  background: rgba(255, 255, 255, 0.1);
+  background: grey
 }
+
+.navbar .navbar-nav li a:focus,
+.navbar .navbar-nav li .active a {
+  background: grey
+}
+
 .show-menu .navbar.menu-wrap {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -966,6 +972,7 @@ textarea.vert{
 .card {
   background-color: #f4f4f4;
   width: 300px;
+  height: ;
   margin: 10px auto;
   box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.7);
 }
@@ -981,8 +988,7 @@ textarea.vert{
 }
 
 .card-content {
-  width: 85%;
-  margin: 35px auto;
+ 
 }
 
 .card-content h3 {
