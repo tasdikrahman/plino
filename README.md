@@ -14,6 +14,7 @@
 - [REST API usage](#rest-api-usage)
     - [using `curl`](#using-curl)
     - [using `requests` (python)](#using-requests)
+    - [using standard python 3 library](#using-standard-python-3-library)
 - [Technologies used](#technologies-used)
     - [Backend](#backend)
     - [Front end](#front-end)
@@ -33,16 +34,24 @@
 ## Demo
 [:arrow_up: Back to top](#table-of-contents)
 
-### For Ham Mail
 
-<center><img src="http://i.imgur.com/3EOTKcM.jpg"></center>
+<center><img src="http://i.imgur.com/Z7Xvc4H.jpg"></center>
 
+<center><img src="http://i.imgur.com/WXUc9ug.jpg"></center>
+
+<center><img src="http://i.imgur.com/Zj96Iul.jpg"></center>
+
+<center><img src="http://i.imgur.com/D0kb3JF.jpg"></center>
+
+<center><img src="http://i.imgur.com/B0obsB5.jpg"></center>
 
 ***
 
-### For Spam Mail
+For more screenshots
 
-<center><img src="http://i.imgur.com/2wSfHRh.jpg"></center>
+| Desktop view | Mobile View |
+|:--:|:--:|
+|[desktop demo screens](http://imgur.com/a/w6gbj) | [mobile demo screens](http://imgur.com/a/eI5sp) |
 
 ***
 
@@ -100,6 +109,38 @@ u'spam'
 >>>
 ```
 
+#### Using standard python 3 library
+[:arrow_up: Back to top](#table-of-contents)
+
+[requests module](https://github.com/kennethreitz/requests) really makes our life easy and I use it all the time. But **sigh**, there should be an example using the standard library so here it is
+
+```python
+>>> import urllib.request
+>>> import json
+>>>
+>>> url = "http://plino.heroku.com/api/v1/classify/"
+>>> req = urllib.request.Request(url)
+>>> req.add_header('Content-Type', 'application/json; charset=utf-8')
+>>>
+>>> body = {'email_text': 'Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman'}
+>>> jsondata = json.dumps(body)
+>>>
+>>> jsondataasbytes = jsondata.encode('utf-8')   # needs to be bytes
+>>> req.add_header('Content-Length', len(jsondataasbytes))
+>>>
+>>> print (jsondataasbytes)
+b'{"email_text": "Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman"}'
+>>>
+>>> with urllib.request.urlopen(req, jsondataasbytes) as f:
+...   print(f.read().decode('utf-8'))
+...
+{
+  "email_class": "spam",
+  "email_text": "Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman",
+  "status": 200
+}
+>>>
+```
 
 ***
 
