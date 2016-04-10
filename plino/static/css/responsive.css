@@ -1,0 +1,152 @@
+@media (min-width: 768px) and (max-width: 1024px) {
+  .title-small {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  #why .content h2 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  #why img {
+    width: 100%;
+  }
+  #screenshot .portfolio figure figcaption .heading {
+    padding: 0 30px;
+  }
+  #cta h2 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 568px) {
+  #portfolio .portfolio-items figure {
+    width: 100%;
+  }
+  #portfolio .portfolio-items figure figcaption .info {
+    margin-top: 120px;
+  }
+  #contact .info-inner {
+    padding-left: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .section {
+    padding: 50px 0;
+  }
+  .section-header .section-title {
+    font-size: 24px;
+  }
+  .section-header .section-subtitle {
+    font-size: 11px;
+  }
+  .title-small {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .navbar .navbar-header {
+    padding: 13px 22px;
+    float: left;
+  }
+  .navbar .navbar-right {
+    float: right;
+  }
+  .hero-area .contents {
+    padding-top: 50px;
+  }
+  .hero-area .contents h1 {
+    font-size: 20px;
+  }
+  .hero-area .contents p {
+    font-size: 14px;
+  }
+  #features .box-item .icon {
+    margin: 10px 15px;
+    float: left;
+  }
+  #features .text {
+    text-align: left;
+  }
+  #features .box-item .text h4 {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  #features .box-item .text p {
+    font-size: 12px;
+  }
+  #features .show-box {
+    padding: 24px 30px;
+  }
+  #features .content-left,
+  #features .content-right {
+    margin-bottom: 60px;
+  }
+  #features .features h4 {
+    font-size: 14px;
+  }
+  #features .features .icon i {
+    padding-right: 22px;
+  }
+  #why .content h2 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  #why .content .list-item li {
+    font-size: 13px;
+  }
+  #why .content .btn {
+    margin-bottom: 60px;
+  }
+  #why img {
+    width: 100%;
+  }
+  #cta h2 {
+    font-size: 18px;
+  }
+  #cta .btn {
+    margin-top: 30px;
+  }
+  #screenshot .portfolio figure figcaption .heading {
+    padding: 0;
+    top: 5%;
+  }
+  #screenshot .portfolio figcaption:hover .heading {
+    top: 15%;
+  }
+  #testimonial .section-title {
+    font-size: 22px;
+  }
+  #testimonial .section-subtitle {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  #clients .client-item-wrapper {
+    margin-bottom: 30px;
+  }
+  #contact .section-title {
+    font-size: 22px;
+  }
+  #contact .info h4 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 640px) and (min-width: 960px) {
+  .navbar-header {
+    width: 100px;
+    float: left;
+    padding-left: 7px !important;
+  }
+  .navbar-right {
+    float: right;
+    width: 100px;
+  }
+}
+@media (max-width: 767px) and (min-width: 479px) {
+  .navbar-header {
+    width: 100px;
+    float: left;
+    padding-left: 7px !important;
+  }
+  .navbar-right {
+    float: right;
+    width: 100px;
+  }
+}
