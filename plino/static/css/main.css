@@ -43,7 +43,6 @@ a:hover,
 a:focus {
   text-decoration: none;
   outline: none;
-  color: #fff;
 }
 .section {
   padding: 90px 0;
@@ -205,7 +204,7 @@ a:focus {
 }
 .close-button:hover:before,
 .close-button:hover:after {
-  background: #fff;
+  
 }
 .navbar .navbar-header {
   padding: 13px 0;
@@ -219,7 +218,7 @@ a:focus {
   font-size: 50px;
 }
 .menu-icon i:hover {
-  color: #fff;
+  
 }
 @media (max-width: 768px) {
   body.toggled {
