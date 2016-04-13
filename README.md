@@ -4,7 +4,7 @@
 
 **:arrow_forward: You can try it out here at [https://plino.heroku.com/](https://plino.heroku.com/)**
 
->This app is based directly on the work I did on [https://github.com/prodicus/spamfilter](https://github.com/prodicus/spamfilter)
+**This app is built directly on the work I did on [https://github.com/prodicus/spammy](https://github.com/prodicus/spammy)**
 
 ***
 
@@ -174,11 +174,11 @@ Built upon the giant shoulders of (__in no particular order__)
 #### Installing it locally
 
 ```bash
-$ virtualenv venv              # Create virtual environment
-$ source venv/bin/activate     # Change default python to virtual one
-(venv)$ git clone https://github.com/prodicus/plino.git
-(venv)$ cd plino 
-(venv)$ pip install -r requirements.txt
+$ virtualenv env              # Create virtual environment
+$ source env/bin/activate     # Change default python to virtual one
+(env)$ git clone https://github.com/prodicus/plino.git
+(env)$ cd plino 
+(env)$ pip install -r requirements.txt
 ```
 
 #### Running it
@@ -200,7 +200,7 @@ $ make run
 
 #### What is the classifier based on 
 
-This repo is build directly on the work I did on [prodicus/spamfilter](https://github.com/prodicus/spamfilter)
+This repo is build directly on the work I did on [prodicus/spammy](https://github.com/prodicus/spammy)
 
 #### What did you train the classifier on
 
