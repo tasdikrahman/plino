@@ -62,9 +62,13 @@ Yes, we do provide an **API** for our service!
 
 #### using `curl`
 
+**General Syntax**
 
 ```bash
-$ curl -i -H "Content-Type: application/json" -X POST -d '{"email_text":"<YOUR EMAIL TEXT>"}' https://plino.herokuapp.com/api/v1/classify/
+$ curl -H "Content-Type: application/json" -X \
+POST -d \
+'{"email_text":"SAMPLE EMAIL TEXT"}' \
+https://plino.herokuapp.com/api/v1/classify/
 ```
 
 **Show me an example**
@@ -72,14 +76,15 @@ $ curl -i -H "Content-Type: application/json" -X POST -d '{"email_text":"<YOUR E
 You thought I was lying!
 
 ```bash
-$ curl -i -H "Content-Type: application/json" -X POST -d '{"email_text":"Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman"}' https://plino.herokuapp.com/api/v1/classify/
-HTTP/1.1 200 OK
-Server: gunicorn/19.4.5
-Date: Sat, 09 Apr 2016 14:15:49 GMT
-Connection: close
-Content-Type: application/json
-Content-Length: 507
+$ curl -H "Content-Type: application/json" \
+-X POST -d \
+'{"email_text":"Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman"}' \
+https://plino.herokuapp.com/api/v1/classify/
+```
 
+**JSON response**
+
+```python
 {
   "email_class": "spam", 
   "email_text": "Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman", 
@@ -95,18 +100,40 @@ How can we forget our beloved [`requests`](https://github.com/kennethreitz/reque
 ```python
 >>> import requests
 >>> import json
+>>> import pprint
+>>>
 >>> api_url = "https://plino.herokuapp.com/api/v1/classify/"
->>> payload = {'email_text': 'Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman'}
+>>> payload = \
+{
+'email_text': 'Dear Tasdik, I would like to immediately transfer 10000 '
+               'thousand dollars to your account as my beloved husband has '
+               'expired and I have nobody to ask for to transfer the money '
+               'to your account. I come from the family of the royal prince '
+               'of burkino fasa and I would be more than obliged to take '
+               'your help on this matter. Would you care to share your bank '
+               'account details with me in the next email conversation that '
+               'we have? -regards -Liah herman'
+}
+>>>
 >>> headers = {'content-type': 'application/json'}
+>>> # query our API
 >>> response = requests.post(api_url, data=json.dumps(payload), headers=headers)
 >>> response.status_code
 200
->>> json_data = response.json()
->>> json_data['email_text']
-u'Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman'
->>> json_data['email_class']
-u'spam'
->>>
+>>> pprint.pprint(response.json())
+{
+ 'email_class': 'spam',
+ 'email_text': 'Dear Tasdik, I would like to immediately transfer 10000 '
+               'thousand dollars to your account as my beloved husband has '
+               'expired and I have nobody to ask for to transfer the money '
+               'to your account. I come from the family of the royal prince '
+               'of burkino fasa and I would be more than obliged to take '
+               'your help on this matter. Would you care to share your bank '
+               'account details with me in the next email conversation that '
+               'we have? -regards -Liah herman',
+ 'status': 200
+ }
+>>> 
 ```
 
 #### Using standard python 3 library
@@ -117,29 +144,37 @@ u'spam'
 ```python
 >>> import urllib.request
 >>> import json
+>>> import pprint 
 >>>
 >>> url = "https://plino.herokuapp.com/api/v1/classify/"
 >>> req = urllib.request.Request(url)
->>> req.add_header('Content-Type', 'application/json; charset=utf-8')
+>>> req.add_header(
+       'Content-Type',
+       'application/json; charset=utf-8'
+   )
 >>>
->>> body = {'email_text': 'Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman'}
->>> jsondata = json.dumps(body)
+>>> body = \
+{'email_text': 'Dear Tasdik, I would like to immediately transfer 10000 '
+               'thousand dollars to your account as my beloved husband has '
+               'expired and I have nobody to ask for to transfer the money '
+               'to your account. I come from the family of the royal prince '
+               'of burkino fasa and I would be more than obliged to take '
+               'your help on this matter. Would you care to share your bank '
+               'account details with me in the next email conversation that '
+               'we have? -regards -Liah herman'
+}
+>>> json_data = json.dumps(body).encode('utf-8')   # needs to be bytes
+>>> req.add_header('Content-Length', len(json_data))
 >>>
->>> jsondataasbytes = jsondata.encode('utf-8')   # needs to be bytes
->>> req.add_header('Content-Length', len(jsondataasbytes))
->>>
->>> print (jsondataasbytes)
-b'{"email_text": "Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman"}'
->>>
->>> with urllib.request.urlopen(req, jsondataasbytes) as f:
+>>> with urllib.request.urlopen(req, json_data) as f:
 ...   print(f.read().decode('utf-8'))
-...
+... 
 {
-  "email_class": "spam",
-  "email_text": "Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman",
+  "email_class": "spam", 
+  "email_text": "Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman", 
   "status": 200
 }
->>>
+>>> 
 ```
 
 ***
@@ -245,3 +280,5 @@ Licensed under [GNU GPLv3](https://github.com/prodicus/alice/tree/master/LICENSE
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 You can find the full copy of the `LICENSE` [here](https://github.com/prodicus/alice/tree/master/LICENSE)
+
+![gplv3](https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/GPLv3_Logo.svg/200px-GPLv3_Logo.svg.png)
