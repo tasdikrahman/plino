@@ -72,7 +72,7 @@
         <div class="contents text-right">
           <h1 class="wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="300ms">Plino - An Intelligent spam filtering System</h1>
           <p class="wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="400ms">Built on top of a Custom Well Trained Naive Bayes Classifier</p>
-          <a href="#cta" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Try the Live Demo</a>
+          <a href="#cta" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Try out Live Demo</a>
           <a href="#main-features" class="btn btn-lg btn-border wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">API Usage</a>
         </div>   
     </header>
@@ -93,7 +93,7 @@
               <div class="features-text">
                 <h4>Python based</h4>
                 <p>
-                  Built on top of beautiful and expressive <strong>Python</strong> and a lot more <strong><a href="https://github.com/prodicus/plino/blob/materialize-UI/requirements.txt">things</a></strong>
+                  Built on top of beautiful and expressive <strong>Python</strong> and a lot more <strong><a href="https://github.com/prodicus/plino/blob/materialize-UI/requirements.txt" target="_blank">things</a></strong>
                 </p>
               </div>
              </div>
@@ -108,7 +108,7 @@
               <div class="features-text">
                 <h4>REST API</h4>
                 <p>
-                  We do provide a REST API for you take advantage of our trained classifier.
+                  We do provide a <a href="#main-features"><strong>REST API</strong></a> for you to integrate plino in your apps
                 </p>
               </div>
             </div>
@@ -152,7 +152,7 @@
               <div class="features-text">
                 <h4>Crafted with Love</h4>
                 <p>
-                  We put a lot of time and effort on Plino so that users could have the least friction when using the service.
+                  We put a lot of time and effort on Plino so that users are faced with the least friction when using our service.
                 </p>
               </div>
             </div>
@@ -166,7 +166,7 @@
               <div class="features-text">
                 <h4>Minimum Downtime</h4>
                 <p>
-                  Our guys back at <a href="https://heroku.com">Heroku</a> ensure that we have minimum downtime for our service.
+                  Our guys back at <a href="https://heroku.com" target="_blank">Heroku</a> ensure that we have minimum downtime.
                 </p>
               </div>
             </div>
@@ -180,7 +180,7 @@
         <div class="row text-center">         
             <!-- <h3 class="title-small wow bounce" data-wow-duration="1000ms" data-wow-delay="300ms">Join Us Today and Change Yourself</h3>
              <a href="javascript:void(0)" class="btn btn-lg btn-border">Sign Up</a> -->
-             <h4 class="title-small wow bounce" data-wow-duration="1000ms" data-wow-delay="300ms">Here is a sample text for you but feel free to try your own emails to see what Plino can do</h4><br>
+             <h4 class="title-small wow bounce" data-wow-duration="1000ms" data-wow-delay="300ms">Here is some sample text but feel free to try your own emails to see what Plino can do</h4><br>
 
              <form class="col s12">
                  <div class="row" id="addcard">
@@ -211,13 +211,13 @@
             <div class="pull-left content">
               <h2>Tell me more about your Classifier?</h2>
               <p>
-                Sure! Plino is powered by a custom Naive Bayes classifier <br>
-                which <a href="http://tasdikrahman.me">Tasdik</a> built while working on <a href="https://github.com/prodicus/spamfilter">spamfilter</a><br>
-                We thought we could make an API for others to make use of our work. So here is Plino for you!
+                <h5>Sure! Plino is powered by a custom Naive Bayes classifier which <a href="http://tasdikrahman.me">Tasdik</a> built while working on <a href="https://github.com/prodicus/spammy">spammy</a>
+                <br>
+                We thought we could make an API for others to make use of our work. So here is Plino for you!</h5>
                 <br>
               </p>
               <ul class="list-item">
-                <li><i class="mdi-action-done"></i>classifier trained against close to 33,000 emails</li>
+                <li><i class="mdi-action-done"></i>classifier trained against 33,000 emails</li>
                 <li><i class="mdi-action-done"></i>Dataset used is the <a href="http://www.cs.cmu.edu/~enron/">Enron dataset</a></li>
                 <li><i class="mdi-action-done"></i>Simple REST API provided</li>
                 <li><i class="mdi-action-done"></i>Written in uncomplicated Python</li>
@@ -246,7 +246,10 @@
                 <strong>General syntax</strong>
                 <pre>
                   <code class="language-bash">
-                    $ curl -i -H "Content-Type: application/json" -X POST -d '{"email_text":"SAMPLE EMAIL TEXT"}' https://plino.herokuapp.com/api/v1/classify/
+                    $ curl -H "Content-Type: application/json" -X \
+                      POST -d \
+                      '{"email_text":"SAMPLE EMAIL TEXT"}' \
+                      https://plino.herokuapp.com/api/v1/classify/
                   </code>
                 </pre>
               </p>
@@ -254,13 +257,10 @@
                 <strong>Example</strong>
                 <pre>
                   <code class="language-bash">
-                    $ curl -i -H "Content-Type: application/json" -X POST -d '{"email_text":"Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman"}' https://plino.herokuapp.com/api/v1/classify/
-                    HTTP/1.1 200 OK
-                    Server: gunicorn/19.4.5
-                    Date: Sat, 09 Apr 2016 14:15:49 GMT
-                    Connection: close
-                    Content-Type: application/json
-                    Content-Length: 507
+                    $ curl -H "Content-Type: application/json" \
+                    -X POST -d \
+                    '{"email_text":"Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman"}' \
+                    https://plino.herokuapp.com/api/v1/classify/
                   </code>
                 </pre>
 
@@ -310,18 +310,40 @@
                   <code class="language-python">
                     >>> import requests
                     >>> import json
+                    >>> import pprint
+                    >>>
                     >>> api_url = "https://plino.herokuapp.com/api/v1/classify/"
-                    >>> payload = {'email_text': 'Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman'}
+                    >>> payload = \
+                    {
+                    'email_text': 'Dear Tasdik, I would like to immediately transfer 10000 '
+                                   'thousand dollars to your account as my beloved husband has '
+                                   'expired and I have nobody to ask for to transfer the money '
+                                   'to your account. I come from the family of the royal prince '
+                                   'of burkino fasa and I would be more than obliged to take '
+                                   'your help on this matter. Would you care to share your bank '
+                                   'account details with me in the next email conversation that '
+                                   'we have? -regards -Liah herman'
+                    }
+                    >>>
                     >>> headers = {'content-type': 'application/json'}
+                    >>> # query our API
                     >>> response = requests.post(api_url, data=json.dumps(payload), headers=headers)
                     >>> response.status_code
                     200
-                    >>> json_data = response.json()
-                    >>> json_data['email_text']
-                    u'Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman'
-                    >>> json_data['email_class']
-                    u'spam'
-                    >>>
+                    >>> pprint.pprint(response.json())
+                    {
+                     'email_class': 'spam',
+                     'email_text': 'Dear Tasdik, I would like to immediately transfer 10000 '
+                                   'thousand dollars to your account as my beloved husband has '
+                                   'expired and I have nobody to ask for to transfer the money '
+                                   'to your account. I come from the family of the royal prince '
+                                   'of burkino fasa and I would be more than obliged to take '
+                                   'your help on this matter. Would you care to share your bank '
+                                   'account details with me in the next email conversation that '
+                                   'we have? -regards -Liah herman',
+                     'status': 200
+                     }
+                    >>> 
                   </code>
                 </pre>
               </p>
@@ -351,21 +373,29 @@
                   <code class="language-python">
                  >>> import urllib.request
                  >>> import json
+                 >>> import pprint 
                  >>>
                  >>> url = "https://plino.herokuapp.com/api/v1/classify/"
                  >>> req = urllib.request.Request(url)
-                 >>> req.add_header('Content-Type', 'application/json; charset=utf-8')
+                 >>> req.add_header(
+                        'Content-Type',
+                        'application/json; charset=utf-8'
+                    )
                  >>>
-                 >>> body = {'email_text': 'Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman'}
-                 >>> jsondata = json.dumps(body)
+                 >>> body = \
+                 {'email_text': 'Dear Tasdik, I would like to immediately transfer 10000 '
+                                'thousand dollars to your account as my beloved husband has '
+                                'expired and I have nobody to ask for to transfer the money '
+                                'to your account. I come from the family of the royal prince '
+                                'of burkino fasa and I would be more than obliged to take '
+                                'your help on this matter. Would you care to share your bank '
+                                'account details with me in the next email conversation that '
+                                'we have? -regards -Liah herman'
+                 }
+                 >>> json_data = json.dumps(body).encode('utf-8')   # needs to be bytes
+                 >>> req.add_header('Content-Length', len(json_data))
                  >>>
-                 >>> jsondataasbytes = jsondata.encode('utf-8')   # needs to be bytes
-                 >>> req.add_header('Content-Length', len(jsondataasbytes))
-                 >>>
-                 >>> print (jsondataasbytes)
-                 b'{"email_text": "Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman"}'
-                 >>>
-                 >>> with urllib.request.urlopen(req, jsondataasbytes) as f:
+                 >>> with urllib.request.urlopen(req, json_data) as f:
                  ...   print(f.read().decode('utf-8'))
                  ... 
                  {
@@ -516,10 +546,10 @@
            </div>
            <div class="card-content">
              <h3>Tasdik Rahman</h3>
-             <h4>Python Lover, Backend guy, Sysadmin at heart.</h4>
+             <h4>ML & NLP enthusiast, Flask/Django dev, Python overlord @ <a href="http://srmsearchengine.in/se.html" target="_blank">SRMSE</a></h4>
              <p>
-               programmer. born on the net, damned if I don’t die here. Speaks parseltongue way too often apparently. Has been wasting his weekends lately building stuff instead of studying.
-               When not programming, he can be found gobbling up pizzas and listenting to rap music
+               ♥'s python and speaks parseltongue way too often apparently. Has been wasting his weekends lately building stuff instead of studying, (here is a <a href="http://tasdikrahman.me/projects" target="_blank">curated list</a> for the curious)<br>
+               When not programming, he can be found gobbling up pizzas, listenting to rap music or prowling on <a href="https://medium.com/@tasdikrahman" target="_blank">medium</a>
              </p>
            </div>
            <div class="card-footer">
@@ -554,9 +584,9 @@
            </div>
            <div class="card-content">
              <h3>Nitesh Sharma</h3>
-             <h4>Full Stack Flask, Django and Rails Developer</h4>
+             <h4>Full Stack Flask, Django and Rails Developer, Web Dev @ <a href="http://srmadt.com/">SRMADT</a></h4>
              <p>
-             A Full Stack Web Developer and JavaScripter. Mostly work on Django, Flask and Ruby on Rails FrameWorks. Also develops Hybrid Mobile apps using Ionic framework and Angular Js. Also had been Captain of state level Kabaddi Champion Team and loves Cooking in spare time</p>
+             A Full Stack Web Developer and JavaScripter. Mostly work on Django, Flask and Ruby on Rails FrameWorks. Also develops Hybrid Mobile apps using Ionic framework and Angular Js. <br>Also had been Captain of state level Kabaddi Champion Team and loves Cooking in spare time</p>
            </div>
            <div class="card-footer">
              <ul>
@@ -665,17 +695,17 @@
         <div class="row">
           <div class="col-md-12">
             <p class="copyright-text">
-             © Plino 2016 All right reserved. 
+             © Plino 2016 All rights reserved. 
             </p>
             <p class="copyright-text">
               Built with <i class="fa fa-heart"></i> by 
-              <a href="http://tasdikrahman.me/">
+              <a href="http://tasdikrahman.me/" target="_blank">
                 Tasdik Rahman
-              </a> and <a href="https://github.com/sinscary">Nitesh Sharma</a>
+              </a> and <a href="https://github.com/sinscary" target="_blank">Nitesh Sharma</a>
             </p>
             <p class="copyright-text"> 
             <a href="http://flask.pocoo.org/"><img src="/static/images/flask.jpg" width="120px" height="50px" style="padding-right:1em;" class=""></a>
-            <img src="/static/images/gplv3.png" class="">
+            <a href="http://www.gnu.org/licenses/gpl-3.0.en.html"><img src="/static/images/gplv3.png" class=""></a>
             </p>
           </div>
         </div>
