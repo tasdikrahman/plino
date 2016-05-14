@@ -746,20 +746,19 @@
           $('#addcard').append('<div class="row"><div class="col s12 m6 l6"><div class="card red"><div class="card-content white-text"><span class="card-title">Please give me more text to analyze!</span><p></p></div></div></div></div>');
         }
         if (messageTxt.length > 10){
+          $('#addcard').find('div:nth-child(2)').remove();
+
           $.post('/api/classify',{message: messageTxt},function(result){
 
             if(result.category == 'spam'){
-              $('#addcard').find('div:nth-child(2)').remove();
               console.log('text is a spam');
               $('#addcard').append('<div class="row"><div class="col s12 m6 l6"><div class="card red flow-text"><div class="card-content white-text"><span class="card-title">Looks like it is a Spam!</span><p></p></div></div></div></div>');
             }
             else if(result.category == 'ham'){
-              $('#addcard').find('div:nth-child(2)').remove();
               console.log('text is a ham');
               $('#addcard').append('<div class="row"><div class="col s12 m6 l6"><div class="card green"><div class="card-content white-text"><span class="card-title">Yaay, this content is spam-free</span><p></p></div></div></div></div>');
             }
             else if(result.category == 'UnicodeEncodeError'){
-              $('#addcard').find('div:nth-child(2)').remove();
               console.log('UnicodeEncodeError');
               $('#addcard').append('<div class="row"><div class="col s12 m6 l6"><div class="card orange lighten-3"><div class="card-content white-text"><span class="card-title">Sorry, there was an Encoding issue.</span><p></p></div></div></div></div>');
             }
