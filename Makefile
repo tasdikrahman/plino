@@ -13,7 +13,7 @@ clean:
 
 run: clean
 	# to be used when testing locally
-	gunicorn --pythonpath plino app:app
+	gunicorn --pythonpath plino plino_app:app
 
 deploy: clean
 	# deploys app to heroku as well pushes the latest commits to the github
