@@ -13,7 +13,7 @@ clean:
 
 run: clean
 	# to be used when testing locally
-	gunicorn --pythonpath plino app:app
+	gunicorn --pythonpath plino plino_app:app
 
 test-api: clean
 	# for testing api responses (test_plino_app_api_response.py)
