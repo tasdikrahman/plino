@@ -2,10 +2,9 @@
 # @Author: sahildua2305
 # @Date:   2016-05-15 05:26:34
 # @Last Modified by:   Sahil Dua
-# @Last Modified time: 2016-05-15 06:24:11
+# @Last Modified time: 2016-05-16 00:00:36
 
 import os, json
-import plino_app
 import requests
 import unittest
 import tempfile
@@ -15,13 +14,10 @@ class PlinoAppTestCase(unittest.TestCase):
     api_url = "http://localhost:8000/api/v1/classify/"
 
     def setUp(self):
-        self.db_fd, plino_app.app.config['DATABASE'] = tempfile.mkstemp()
-        plino_app.app.config['TESTING'] = True
-        self.app = plino_app.app.test_client()
+        pass
 
     def tearDown(self):
-        os.close(self.db_fd)
-        os.unlink(plino_app.app.config['DATABASE'])
+        pass
 
     """
     Unit test to verify the 400 response code when no email_text is present in the request to API endpoint
@@ -41,8 +37,8 @@ class PlinoAppTestCase(unittest.TestCase):
         }
         headers = {'content-type': 'application/json'}
         response = requests.post(self.api_url, data=json.dumps(payload), headers=headers)
-        assert response.status_code == 200
         r = json.loads(response.content)
+        assert response.status_code == 200
         assert r['email_class'] == 'spam'
 
     """
