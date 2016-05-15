@@ -17,3 +17,6 @@ Flask-Cache==0.13.1
 
 # production server
 gunicorn==19.4.5
+
+# Additional requirements
+requests == 2.10.0
