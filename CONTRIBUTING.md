@@ -4,7 +4,7 @@ This project is still a work in progress. Feel free to make a PR
 
 - Fork it.
 
-- Clone it 
+- Clone it
 
 create a [virtualenv](http://pypi.python.org/pypi/virtualenv)
 
@@ -12,7 +12,7 @@ create a [virtualenv](http://pypi.python.org/pypi/virtualenv)
 $ virtualenv venv              # Create virtual environment
 $ source venv/bin/activate     # Change default python to virtual one
 (venv)$ git clone https://github.com/prodicus/plino.git
-(venv)$ cd plino 
+(venv)$ cd plino
 (venv)$ pip install -r requirements.txt
 ```
 
@@ -27,21 +27,29 @@ $ source venv/bin/activate     # Change default python to virtual one
 (venv)$ pip install -r requirements.txt
 ```
 
--  Create your feature branch 
+-  Create your feature branch
 
 ```bash
 $ git checkout -b my-new-awesome-feature
 ```
 
--  Commit your changes 
+-  Commit your changes
 
 ```bash
 $ git commit -am 'Added <xyz> feature'
 ```
 
--  Make sure that your code Conforms to [PEP8](https://www.python.org/dev/peps/pep-0008/) and if everything is running fine, integrate your feature 
+-  Make sure that your code Conforms to [PEP8](https://www.python.org/dev/peps/pep-0008/) and if everything is running fine, integrate your feature
 
--  Push to the branch 
+- **Running the tests**
+
+Plino uses `nosetests` to run its test suite. To run them
+
+```bash
+$ nosetests # inside the parent directory
+```
+
+-  Push to the branch
 
 ```bash
 $ git push origin my-new-awesome-feature

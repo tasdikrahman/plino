@@ -1,5 +1,7 @@
 <center><img src="https://raw.githubusercontent.com/prodicus/plino/gh-pages/images/logo_2.png?token=AEdMBkvEtWYtyO50OjnlksEt5Qpslm4Yks5XEPPKwA%3D%3D"></center>
 
+[![Build status](https://api.travis-ci.org/prodicus/plino.svg)](https://travis-ci.org/prodicus/plino)
+
 > An intelligent spam filtering system built using a **custom Naive Bayes classifier**
 
 **:arrow_forward: You can try it out here at [https://plino.heroku.com/](https://plino.heroku.com/)**
@@ -212,7 +214,7 @@ Built upon the giant shoulders of (__in no particular order__)
 $ virtualenv env              # Create virtual environment
 $ source env/bin/activate     # Change default python to virtual one
 (env)$ git clone https://github.com/prodicus/plino.git
-(env)$ cd plino 
+(env)$ cd plino
 (env)$ pip install -r requirements.txt
 ```
 
@@ -227,6 +229,7 @@ $ make run
 #### Contributers
 
 - [Nitesh Sharma (sinscary)](https://github.com/sinscary) : **UI dev**
+- [Sahil Dua (sahildua2305)](https://github.com/sahildua2305): **Test cases**
 
 ***
 
@@ -253,8 +256,8 @@ I will leave that to you to decide upon. But for the questions sake, decent enou
 - [x] Deploying to heroku
 - [x] Creating a REST API
 - [x] Improving the UI
+- [x] Writing tests
 - [ ] Simple API authentication
-- [ ] Writing tests
 
 ***
 

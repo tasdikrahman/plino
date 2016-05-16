@@ -4,14 +4,10 @@ python:
   - "2.7"
 
 before_script:
-  - "pip install -r requirements.txt"
   - "make run-background"  # run gunicorn server
   - sleep 5  # # give Web server some time to bind to sockets, etc
 
 script: make test-api
-
-after_script:
-  - "pkill gunicorn"
 
 notifications:
   webhooks:

@@ -2,7 +2,7 @@
 # @Author: sahildua2305
 # @Date:   2016-05-15 05:26:34
 # @Last Modified by:   Tasdik Rahman
-# @Last Modified time: 2016-05-16 10:55:57
+# @Last Modified time: 2016-05-16 11:50:36
 
 import json
 import unittest
@@ -21,7 +21,6 @@ class PlinoAppTestCase(unittest.TestCase):
 
     def tearDown(self):
         pass
-
 
     def test_api_no_email_text(self):
         """

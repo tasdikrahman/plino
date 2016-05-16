@@ -12,10 +12,11 @@ clean:
 	-find . -name '__pycache__' -delete
 
 run-background: clean
-	# to be used when testing locally
+	# when running in CI server
 	nohup gunicorn --pythonpath plino app:app &
 
 run: clean
+	# to be used when testing locally
 	gunicorn --pythonpath plino app:app
 
 test-api: clean run-background
