@@ -1,6 +1,7 @@
 # ignore the virtualenv folder
 test_emails/
 venv
+nohup.out
 # logfiles/ ## commenting it out as it caused an error when running on heroku
 
 # Byte-compiled / optimized / DLL files

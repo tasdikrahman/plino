@@ -11,13 +11,16 @@ clean:
 	-find . -name '*.pyc' -delete
 	-find . -name '__pycache__' -delete
 
-run: clean
+run-background: clean
 	# to be used when testing locally
+	nohup gunicorn --pythonpath plino app:app &
+
+run: clean
 	gunicorn --pythonpath plino app:app
 
-test-api: clean
+test-api: clean run-background
 	# for testing api responses (test_plino_app_api_response.py)
-	python tests/test_plino_app_api_response.py
+	nosetests
 
 deploy: clean
 	# deploys app to heroku as well pushes the latest commits to the github

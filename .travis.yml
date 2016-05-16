@@ -5,10 +5,13 @@ python:
 
 before_script:
   - "pip install -r requirements.txt"
-  - "make run"  # run gunicorn server
+  - "make run-background"  # run gunicorn server
   - sleep 5  # # give Web server some time to bind to sockets, etc
 
 script: make test-api
+
+after_script:
+  - "pkill gunicorn"
 
 notifications:
   webhooks:
