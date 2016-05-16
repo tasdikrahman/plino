@@ -2,12 +2,11 @@
 # @Author: sahildua2305
 # @Date:   2016-05-15 05:26:34
 # @Last Modified by:   Sahil Dua
-# @Last Modified time: 2016-05-16 00:00:36
+# @Last Modified time: 2016-05-16 01:33:18
 
-import os, json
+import json
 import requests
 import unittest
-import tempfile
 
 class PlinoAppTestCase(unittest.TestCase):
 
