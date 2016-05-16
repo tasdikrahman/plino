@@ -19,10 +19,6 @@ test-api: clean
 	# for testing api responses (test_plino_app_api_response.py)
 	python tests/test_plino_app_api_response.py
 
-test-api: clean
-	# for testing api responses (test_plino_app_api_response.py)
-	python tests/test_plino_app_api_response.py
-
 deploy: clean
 	# deploys app to heroku as well pushes the latest commits to the github
 	# remote
