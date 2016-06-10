@@ -1,18 +1,18 @@
 <!doctype html>
 <html lang="en">
 
-  <head>  	
+  <head>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <!-- Favicon -->
 
-  	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="description" content="Plino - A responsive spam filtering system - Tasdik Rahman">
     <meta name="keywords" content="Spam Filtering System, Plino, Tasdik Rahman, prodicus, spamfilter">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="Tasdik Rahman">
-		<title>Plino - An Intelligent spam filtering System</title>
+    <title>Plino - An Intelligent spam filtering System</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -30,7 +30,17 @@
     <!-- Code highlighting -->
     <link href="/static/css/prism.css" rel="stylesheet" />
     <!-- Code highlighting -->
-
+    <!-- Start Visual Website Optimizer Asynchronous Code -->
+    <script type='text/javascript'>
+    var _vwo_code=(function(){
+    var account_id=243020,
+    settings_tolerance=2000,
+    library_tolerance=2500,
+    use_existing_jquery=false,
+    // DO NOT EDIT BELOW THIS LINE
+    f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+    </script>
+    <!-- End Visual Website Optimizer Asynchronous Code -->
   </head>
 
   <body>
@@ -49,10 +59,9 @@
         </ul>
         <button class="close-button" id="close-button">Close Menu</button>
     </div>
-  	
-  	<div class="content-wrap">
+
+    <div class="content-wrap">
      <header class="hero-area" id="home">
-      
       <div class="container">
           <div class="col-md-12">
 
@@ -64,18 +73,18 @@
                 <div class="navbar-right">
                   <button class="menu-icon"  id="open-button">
                     <i class="mdi-navigation-menu"></i>
-                  </button>             
+                  </button>
                 </div>
               </div>
             </div>
-        </div>        
+        </div>
         <div class="contents text-right">
           <h1 class="wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="300ms">Plino - An Intelligent spam filtering System</h1>
           <p class="wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="400ms">Built on top of a Custom Well Trained Naive Bayes Classifier</p>
           <a href="#cta" class="btn btn-lg btn-primary wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Try out Live Demo</a>
           <a href="#main-features" class="btn btn-lg btn-border wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">API Usage <i class="fa fa-cogs" aria-hidden="true"></i></a>
           <a href="https://github.com/prodicus/plino" target="_blank" class="btn btn-lg btn-border wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">Fork us on <i class="fa fa-github"></i></a>
-        </div>   
+        </div>
     </header>
 
     <section id="features" class="section">
@@ -127,9 +136,7 @@
                 </p>
               </div>
             </div>
-          </div>            
-
-
+          </div>
           <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="650ms">
             <div class="features">
               <div class="icon">
@@ -171,14 +178,14 @@
                 </p>
               </div>
             </div>
-          </div>   
+          </div>
         </div>
       </div>
     </section>
 
     <section id="cta">
       <div class="container">
-        <div class="row text-center">         
+        <div class="row text-center">
             <!-- <h3 class="title-small wow bounce" data-wow-duration="1000ms" data-wow-delay="300ms">Join Us Today and Change Yourself</h3>
              <a href="javascript:void(0)" class="btn btn-lg btn-border">Sign Up</a> -->
              <h4 class="title-small wow bounce" data-wow-duration="1000ms" data-wow-delay="300ms">Here is some sample text but feel free to try your own emails to see what Plino can do</h4><br>
@@ -205,8 +212,7 @@
 
     <section id="why" class="section">
       <div class="container">
-        
-        <div class="row">     
+        <div class="row">
 
           <div class="col-md-6 col-sm-6 wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
             <div class="pull-left content">
@@ -237,7 +243,7 @@
      <section id="main-features" class="section main-feature-gray">
       <div class="container">
 
-        <div class="row">   
+        <div class="row">
           <div class="col-md-8 col-sm-8">
             <div class="feature-item">
               <h3 class="title-small">
@@ -269,7 +275,7 @@
                 <pre>
                   <code class="language-json">
                     {
-                      "email_class": "spam", 
+                      "email_class": "spam",
                       "email_text": "Dear Tasdik, I would like to immediately transfer 10000 thousand dollars to your account as my beloved husband has expired and I have nobody to ask for to transfer the money to your account. I come from the family of the royal prince of burkino fasa and I would be more than obliged to take your help on this matter. Would you care to share your bank account details with me in the next email conversation that we have? -regards -Liah herman", 
                       "status": 200
                     }
