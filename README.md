@@ -1,6 +1,6 @@
 <center><img src="https://raw.githubusercontent.com/prodicus/plino/gh-pages/images/logo_2.png?token=AEdMBkvEtWYtyO50OjnlksEt5Qpslm4Yks5XEPPKwA%3D%3D"></center>
 
-[![Build status](https://api.travis-ci.org/prodicus/plino.svg)](https://travis-ci.org/prodicus/plino)
+[![Build status](https://api.travis-ci.org/prodicus/plino.svg)](https://travis-ci.org/prodicus/plino)  [![Requirements Status](https://requires.io/github/prodicus/plino/requirements.svg?branch=master)](https://requires.io/github/prodicus/plino/requirements/?branch=master)
 
 > An intelligent spam filtering system built using a **custom Naive Bayes classifier**
 
