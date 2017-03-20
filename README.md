@@ -1,12 +1,22 @@
 <center><img src="https://raw.githubusercontent.com/prodicus/plino/gh-pages/images/logo_2.png?token=AEdMBkvEtWYtyO50OjnlksEt5Qpslm4Yks5XEPPKwA%3D%3D"></center>
 
-[![Build status](https://api.travis-ci.org/prodicus/plino.svg)](https://travis-ci.org/prodicus/plino)
+[![Build status](https://api.travis-ci.org/prodicus/plino.svg)](https://travis-ci.org/prodicus/plino)  [![Requirements Status](https://requires.io/github/prodicus/plino/requirements.svg?branch=master)](https://requires.io/github/prodicus/plino/requirements/?branch=master)
 
 > An intelligent spam filtering system built using a **custom Naive Bayes classifier**
 
 **:arrow_forward: You can try it out here at [https://plino.heroku.com/](https://plino.heroku.com/)**
 
 **This app is built directly on the work I did on [https://github.com/prodicus/spammy](https://github.com/prodicus/spammy)**
+
+***
+
+If you have found my little bits of software of any use to you, you can help me pay my internet bills :)
+
+<p align="center">
+<a href="https://www.paypal.me/tasdikrahman" target="_blank"><img src="https://tuxtricks.files.wordpress.com/2016/12/donate.png" alt="Donate via PayPal!" title="Donate via PayPal!" /></a>
+</p>
+
+Some of my projects are also on [gratipay](https://gratipay.com/~prodicus/)
 
 ***
 
