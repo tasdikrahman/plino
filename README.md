@@ -24,6 +24,9 @@ If you are from the Indian subcontinent.
 
 Some of my projects are also on [gratipay](https://gratipay.com/~prodicus/)
 
+<a href="https://news.ycombinator.com/item?id=11491949"><img src="https://raw.githubusercontent.com/wingify/across-tabs/master/images/hn.png" width="150" height="20"/></a>
+<a href="https://www.producthunt.com/posts/plino"><img src="https://raw.githubusercontent.com/wingify/across-tabs/master/images/product_hunt.png" width="100" height="20"/></a>
+
 ***
 
 ## Table of contents
