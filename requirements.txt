@@ -1,7 +1,7 @@
 # https://github.com/prodicus/spamfilter specific requirements
 beautifulsoup4==4.6.0
 dill==0.2.6
-nltk==3.2.2
+nltk==3.2.3
 tabulate==0.7.7
 termcolor==1.1.0
 
