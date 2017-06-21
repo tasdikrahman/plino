@@ -10,20 +10,6 @@
 
 ***
 
-If you have found my little bits of software of any use to you, you can help me pay my internet bills :)
-
-<p align="center">
-<a href="https://www.paypal.me/tasdikrahman" target="_blank"><img src="https://tuxtricks.files.wordpress.com/2016/12/donate.png" alt="Donate via PayPal!" title="Donate via PayPal!" /></a>
-</p>
-
-If you are from the Indian subcontinent.
-
-<p align="center">
-<a href="https://www.instamojo.com/@tasdikrahman" target="_blank"><img src="https://www.instamojo.com/blog/wp-content/uploads/2017/01/instamojo-91.png" alt="Donate via instamojo" title="Donate via instamojo" /></a>
-</p>
-
-Some of my projects are also on [gratipay](https://gratipay.com/~prodicus/)
-
 <a href="https://news.ycombinator.com/item?id=11491949"><img src="https://raw.githubusercontent.com/wingify/across-tabs/master/images/hn.png" width="150" height="20"/></a>
 <a href="https://www.producthunt.com/posts/plino"><img src="https://raw.githubusercontent.com/wingify/across-tabs/master/images/product_hunt.png" width="100" height="20"/></a>
 
@@ -49,6 +35,7 @@ Some of my projects are also on [gratipay](https://gratipay.com/~prodicus/)
     - [How accurate is it](#how-accurate-is-it)
 - [Roadmap](#roadmap)
 - [Legal stuff](#legal-stuff)
+- [Donation](#donation)
 
 ***
 
@@ -304,3 +291,13 @@ Licensed under [GNU GPLv3](https://github.com/prodicus/alice/tree/master/LICENSE
 You can find the full copy of the `LICENSE` [here](https://github.com/prodicus/alice/tree/master/LICENSE)
 
 ![gplv3](https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/GPLv3_Logo.svg/200px-GPLv3_Logo.svg.png)
+
+## Donation
+
+
+If you have found my little bits of software being of any use to you, do consider helping me pay my internet bills :)
+
+| £ (GBP) | <a href="https://transferwise.com/pay/d804d854-6862-4127-afdd-4687d64cbd28" target="_blank"><img src="http://i.imgur.com/ARJfowA.png" alt="Donate via TransferWise!" title="Donate via TransferWise!" /></a> |
+|:-------------------------------------------:|:-------------------------------------------------------------:|
+| € Euros | <a href="https://transferwise.com/pay/64c586e3-ec99-4be8-af0b-59241f7b9b79" target="_blank"><img src="http://i.imgur.com/ARJfowA.png" alt="Donate via TransferWise!" title="Donate via TransferWise!" /></a> |
+| ₹ (INR)  | <a href="https://www.instamojo.com/@tasdikrahman" target="_blank"><img src="https://www.instamojo.com/blog/wp-content/uploads/2017/01/instamojo-91.png" alt="Donate via instamojo" title="Donate via instamojo" /></a> | 
