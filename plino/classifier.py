@@ -5,7 +5,7 @@
 # @Last Modified time: 2016-04-05 22:49:40
 # @GPLv3 License
 # @http://tasdikrahman.me
-# @Source Git Repository:: https://github.com/prodicus/spamfilter
+# @Source Git Repository:: https://github.com/tasdikrahman/spamfilter
 
 
 from __future__ import division

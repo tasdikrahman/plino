@@ -5,7 +5,7 @@
 # @Last Modified time: 2016-04-06 18:07:28
 # @GPLv3 License
 # @http://tasdikrahman.me
-# @https://github.com/prodicus
+# @https://github.com/tasdikrahman
 
 import os
 

@@ -1,12 +1,12 @@
-<center><img src="https://raw.githubusercontent.com/prodicus/plino/gh-pages/images/logo_2.png?token=AEdMBkvEtWYtyO50OjnlksEt5Qpslm4Yks5XEPPKwA%3D%3D"></center>
+<center><img src="https://raw.githubusercontent.com/tasdikrahman/plino/gh-pages/images/logo_2.png?token=AEdMBkvEtWYtyO50OjnlksEt5Qpslm4Yks5XEPPKwA%3D%3D"></center>
 
-[![Build status](https://api.travis-ci.org/prodicus/plino.svg)](https://travis-ci.org/prodicus/plino)  [![Requirements Status](https://requires.io/github/prodicus/plino/requirements.svg?branch=master)](https://requires.io/github/prodicus/plino/requirements/?branch=master)
+[![Build status](https://api.travis-ci.org/tasdikrahman/plino.svg)](https://travis-ci.org/tasdikrahman/plino)  [![Requirements Status](https://requires.io/github/tasdikrahman/plino/requirements.svg?branch=master)](https://requires.io/github/tasdikrahman/plino/requirements/?branch=master)
 
 > An intelligent spam filtering system built using a **custom Naive Bayes classifier**
 
 **:arrow_forward: You can try it out here at [https://plino.heroku.com/](https://plino.heroku.com/)**
 
-**This app is built directly on the work I did on [https://github.com/prodicus/spammy](https://github.com/prodicus/spammy)**
+**This app is built directly on the work I did on [https://github.com/tasdikrahman/spammy](https://github.com/tasdikrahman/spammy)**
 
 ***
 
@@ -201,7 +201,7 @@ Built upon the giant shoulders of (__in no particular order__)
 - [Jinja2](http://jinja.pocoo.org/) as the templating engine
 - [dill](https://pypi.python.org/pypi/dill) for de-serializing complex python objects
 
-[and some more](https://github.com/prodicus/plino/blob/master/requirements.txt)
+[and some more](https://github.com/tasdikrahman/plino/blob/master/requirements.txt)
 
 #### Front end
 
@@ -219,7 +219,7 @@ Built upon the giant shoulders of (__in no particular order__)
 ```bash
 $ virtualenv env              # Create virtual environment
 $ source env/bin/activate     # Change default python to virtual one
-(env)$ git clone https://github.com/prodicus/plino.git
+(env)$ git clone https://github.com/tasdikrahman/plino.git
 (env)$ cd plino
 (env)$ pip install -r requirements.txt
 ```
@@ -230,7 +230,7 @@ $ source env/bin/activate     # Change default python to virtual one
 $ make run
 ```
 
-**Refer [CONTRIBUTING.md](https://github.com/prodicus/plino/blob/master/CONTRIBUTING.md) for detailed reference**
+**Refer [CONTRIBUTING.md](https://github.com/tasdikrahman/plino/blob/master/CONTRIBUTING.md) for detailed reference**
 
 #### Contributers
 
@@ -244,11 +244,11 @@ $ make run
 
 #### What is the classifier based on 
 
-This repo is build directly on the work I did on [prodicus/spammy](https://github.com/prodicus/spammy)
+This repo is build directly on the work I did on [tasdikrahman/spammy](https://github.com/tasdikrahman/spammy)
 
 #### What did you train the classifier on
 
-The pickled classifier was trained against a total of close to **33,000** emails picked from publicly available [enron dataset](https://www.cs.cmu.edu/~./enron/). You can find the `full_corpus` directory, which holds the training emails [here](https://github.com/prodicus/spamfilter/tree/master/data)
+The pickled classifier was trained against a total of close to **33,000** emails picked from publicly available [enron dataset](https://www.cs.cmu.edu/~./enron/). You can find the `full_corpus` directory, which holds the training emails [here](https://github.com/tasdikrahman/spamfilter/tree/master/data)
 
 #### How accurate is it
 
@@ -270,7 +270,7 @@ I will leave that to you to decide upon. But for the questions sake, decent enou
 ## Legal Stuff
 [:arrow_up: Back to top](#table-of-contents)
 
-Licensed under [GNU GPLv3](https://github.com/prodicus/alice/tree/master/LICENSE)
+Licensed under [GNU GPLv3](https://github.com/tasdikrahman/alice/tree/master/LICENSE)
 
     plino: A spam filtering system
     Copyright (C) 2016  Tasdik Rahman
@@ -288,7 +288,7 @@ Licensed under [GNU GPLv3](https://github.com/prodicus/alice/tree/master/LICENSE
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-You can find the full copy of the `LICENSE` [here](https://github.com/prodicus/alice/tree/master/LICENSE)
+You can find the full copy of the `LICENSE` [here](https://github.com/tasdikrahman/alice/tree/master/LICENSE)
 
 ![gplv3](https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/GPLv3_Logo.svg/200px-GPLv3_Logo.svg.png)
 

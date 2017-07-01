@@ -5,7 +5,7 @@
 # @Last Modified time: 2016-05-15 06:20:03
 # @MIT License
 # @http://tasdikrahman.me
-# @https://github.com/prodicus
+# @https://github.com/tasdikrahman
 
 import logging
 import sys

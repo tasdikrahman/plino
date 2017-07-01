@@ -11,7 +11,7 @@ create a [virtualenv](http://pypi.python.org/pypi/virtualenv)
 ```bash
 $ virtualenv venv              # Create virtual environment
 $ source venv/bin/activate     # Change default python to virtual one
-(venv)$ git clone https://github.com/prodicus/plino.git
+(venv)$ git clone https://github.com/tasdikrahman/plino.git
 (venv)$ cd plino
 (venv)$ pip install -r requirements.txt
 ```
@@ -22,7 +22,7 @@ Or, if `virtualenv` is not installed on your system:
 $ wget https://raw.github.com/pypa/virtualenv/master/virtualenv.py
 $ python virtualenv.py venv    # Create virtual environment
 $ source venv/bin/activate     # Change default python to virtual one
-(venv)$ git clone https://github.com/prodicus/plino.git
+(venv)$ git clone https://github.com/tasdikrahman/plino.git
 (venv)$ cd plino
 (venv)$ pip install -r requirements.txt
 ```
@@ -55,6 +55,6 @@ $ nosetests # inside the parent directory
 $ git push origin my-new-awesome-feature
 ```
 
-- Create new [Pull Request](https://github.com/prodicus/plino/pull/new/master)
+- Create new [Pull Request](https://github.com/tasdikrahman/plino/pull/new/master)
 
 Hack away! :smile:
