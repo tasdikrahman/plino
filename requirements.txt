@@ -1,6 +1,6 @@
 # https://github.com/tasdikrahman/spamfilter specific requirements
 beautifulsoup4==4.6.0
-dill==0.2.6
+dill==0.2.7.1
 nltk==3.2.2
 tabulate==0.7.7
 termcolor==1.1.0
