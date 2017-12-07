@@ -7,7 +7,7 @@ termcolor==1.1.0
 
 # Flask requirements
 MarkupSafe==1.0
-Werkzeug==0.12.1
+Werkzeug==0.13
 itsdangerous==0.24
 Jinja2==2.9.6
 Flask==0.12.1
